@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Colomna</title>
+
+<link href="css/estilo_contenido.css" rel="stylesheet" type="text/css">
+
+<script language="javascript">
+
+function abrirref(){
+		document.getElementById("popupmasinfo").style.display = 'block';
+		}
+	function cerrarref(){
+		document.getElementById("popupmasinfo").style.display = 'none';
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+
+<script language="javascript">
+
+function abrirrx(){
+		document.getElementById("contenido_rx").style.display = 'block';
+		}
+	function cerrarrx(){
+		document.getElementById("contenido_rx").style.display = 'none';
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="contenido_rx">
+
+<div id="btncerrx" onClick="MM_callJS('cerrarrx()')">	
+    </div>
+
+<img src="img/radiculopatia/rx_radiculopatia1.png"/>
+
+</div>
+
+<div id="popupmasinfo">
+	
+    <div id="btncerrarinfo" onClick="MM_callJS('cerrarref()')">	
+    </div>
+    
+    <div id="titulomasinfo">
+    Radiculopatía
+    </div>
+    
+    <div id="textomasinfo">
+        La radiculopatía se define como la afección de las raíces nerviosas de la columna que se produce por diferentes enfermedades<sup>1</sup>.<br><br>
+        
+        Dependiendo de la raíz nerviosa comprimida, el dolor se sentirá en diferentes zonas de la extremidad inferior<sup>1</sup>.
+    </div>
+    
+</div>
+
+<div id="titulo">
+<img src="img/radiculopatia/Titulo_radiculopatia - copia.png"/>
+</div>
+
+<div id="imagen_lateral">
+<img src="img/radiculopatia/radiculo_recuadro.png"/>
+</div>
+
+<div class ="imagen_c" style="margin-top:50px; margin-left:-43px"><img src="img/radiculopatia/radiculopatia1.png"/></div>
+
+<div id="generalbotones">   
+    
+	<div id="fondobtnsig">
+    </div>
+    
+  <!--<div id="antbtn"> 
+  <a href="hernia.html"><img src="img/Anterior_btn.fw.png"/> </a>
+  </div>-->
+   
+  <div id="sigbtn"> 
+  <a href="radiculopatia2.html"><img src="img/Siguiente_btn.fw.png"/> </a>
+  </div>
+    
+    
+    <div id="btnvermasinfo" onClick="MM_callJS('abrirref()')">
+    </div>
+    
+    <div id="btnverrx" onClick="MM_callJS('abrirrx()')">
+    </div>
+</div>
+
+</body>
+
+</html>

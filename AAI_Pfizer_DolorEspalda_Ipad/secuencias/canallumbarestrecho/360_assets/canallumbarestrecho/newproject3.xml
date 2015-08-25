@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <settings>
+    <preloader image="images/canal lumbar estrecho_01.png" />
+    <userInterface showZoomButtons="true" showToolTips="false" showHotspotsButton="true" showFullScreenButton="true" showTogglePlayButton="true" showArrows="true" toolbarAlign="center" toolbarBackColor="#FFFFFF" toolbarHoverColor="#808285" toolbarForeColor="#A7A9AE" toolbarBackAlpha="0,9" toolbarAlpha="1" flashEmbedFonts="true" showProgressNumbers="true" progressLoopColor="#e8e8e8" progressNumColor="#949494" />
+    <control dragSpeed="0,1" maxZoom="200" maxZoomFullScreen="200" fullScreenStretch="100" doubleClickZooms="true" disableMouseControl="false" reverseScroll="false" />
+    <rotation firstImage="0" rotate="once" rotatePeriod="1" bounce="true" rotateDirection="-1" forceDirection="false" />
+  </settings>
+  <hotspots />
+  <images>
+    <image src="images/canal lumbar estrecho_01.png" />
+    <image src="images/canal lumbar estrecho_02.png" />
+    <image src="images/canal lumbar estrecho_03.png" />
+    <image src="images/canal lumbar estrecho_04.png" />
+    <image src="images/canal lumbar estrecho_05.png" />
+    <image src="images/canal lumbar estrecho_06.png" />
+    <image src="images/canal lumbar estrecho_07.png" />
+    <image src="images/canal lumbar estrecho_08.png" />
+    <image src="images/canal lumbar estrecho_09.png" />
+    <image src="images/canal lumbar estrecho_10.png" />
+    <image src="images/canal lumbar estrecho_11.png" />
+    <image src="images/canal lumbar estrecho_12.png" />
+  </images>
+</config>

@@ -1,0 +1,308 @@
+@charset "utf-8";
+/* CSS Document */
+
+#body{
+	background:url(../img/fondo_general.png);
+	background-repeat:no-repeat;
+	background-size:auto;
+	}
+	
+#homebtn{
+	background-color:rgba(102,102,102,0);
+	height:29px;
+	margin-left:-2px;
+	margin-top:46px;
+	width:35px;	
+	}
+	
+#columnabtn{
+	background-color:rgba(102,102,102,0);
+	height:32px;
+	margin-left:-8px;
+	margin-top:30px;
+	width:200px;	
+	}
+#medulabtn{
+	background-color:rgba(102,102,102,0);
+	height:31px;
+	margin-left:-8px;
+	margin-top:5px;
+	width:200px;	
+	}
+#lasviasbtn{
+	background-color:rgba(102,102,102,0);
+	height:31px;
+	margin-left:-8px;
+	margin-top:5px;
+	width:200px;	
+	}
+#tiposdolorbtn{
+	background-color:rgba(102,102,102,0);
+	height:31px;
+	margin-left:-8px;
+	margin-top:38px;
+	width:200px;	
+	}
+#dolormecabtn{
+	background-color:rgba(102,102,102,0);
+	height:32px;
+	margin-left:-8px;
+	margin-top:43px;
+	width:200px;	
+	}
+#herniabtn{
+	background-color:rgba(102,102,102,0);
+	height:32px;
+	margin-left:-8px;
+	margin-top:4px;
+	width:200px;	
+	}
+#radiculopatiabtn{
+	background-color:rgba(102,102,102,0);
+	height:32px;
+	margin-left:-8px;
+	margin-top:4px;
+	width:200px;	
+	}
+#canallbtn{
+	background-color:rgba(102,102,102,0);
+	height:31px;
+	margin-left:-8px;
+	margin-top:4px;
+	width:200px;	
+	}
+#fracturabtn{
+	background-color:rgba(102,102,102,0);
+	height:31px;
+	margin-left:-8px;
+	margin-top:5px;
+	width:200px;	
+	}
+#traumabtn{
+	background-color:rgba(102,102,102,0);
+	height:31px;
+	margin-left:-8px;
+	margin-top:5px;
+	width:200px;	
+	}
+#espodilolisisbtn{
+	background-color:rgba(102,102,102,0);
+	height:32px;
+	margin-left:-8px;
+	margin-top:4px;
+	width:200px;	
+	}
+#espodilolistesisbtn{
+	background-color:rgba(102,102,102,0);
+	height:32px;
+	margin-left:-8px;
+	margin-top:3px;
+	width:200px;	
+	}
+#escalabtn{
+	background-color:rgba(102,102,102,0);
+	height:32px;
+	margin-left:-8px;
+	margin-top:40px;
+	width:200px;	
+	}
+#dn4btn{
+	background-color:rgba(102,102,102,0);
+	height:32px;
+	margin-left:-8px;
+	margin-top:3px;
+	width:200px;	
+	}
+#contframe{
+	position:absolute;
+	top:60px;
+	left:210px;
+	background-color:#FFF;
+	border-radius:8px;
+	border:1px solid #A4D2EC;
+	box-shadow:inset -3px -3px 4px #CCCCCC;
+	}
+
+#pizarra{
+	margin-top:14px;
+	margin-left:202px;
+	display:none;
+	position:absolute;
+	z-index:1;
+	}
+
+#bpizarra{
+	margin-top:681px;
+	margin-left:150px;
+	display:block;
+	position:absolute;
+	z-index:2;
+	}
+	
+#bpizarraOut{
+	margin-top:681px;
+	margin-left:150px;
+	display:none;
+	position:absolute;
+	z-index:2;
+	}
+	
+#btnreferencias{
+	margin-top:681px;
+	margin-left:0px;
+	position:absolute;
+	z-index:2;
+	}
+/**********************marcadores********************************/	
+#marcador1{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-596px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador2{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-560px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+#marcador3{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-525px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador4{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-454px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador5{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-379px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador6{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-345px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador7{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-309px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador8{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-273px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador9{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-236px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador10{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-201px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador11{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-166px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador12{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-131px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador13{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-58px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}
+
+#marcador14{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:195px;
+	height:27px;
+	margin-top:-25px;
+	margin-left:-5px;
+	position:absolute;
+	display:none;
+}

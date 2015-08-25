@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Colomna</title>
+
+<link href="css/estilo_contenido.css" rel="stylesheet" type="text/css">
+
+<script language="javascript">
+
+function abrirref(){
+		document.getElementById("popupmasinfo").style.display = 'block';
+		}
+	function cerrarref(){
+		document.getElementById("popupmasinfo").style.display = 'none';
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+
+<script language="javascript">
+
+function abrirrx(){
+		document.getElementById("contenido_rx").style.display = 'block';
+		}
+	function cerrarrx(){
+		document.getElementById("contenido_rx").style.display = 'none';
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="contenido_rx">
+
+<div id="btncerrx" onClick="MM_callJS('cerrarrx()')">	
+    </div>
+
+<img src="img/columna/Rx_cervical.png"/>
+
+</div>
+
+<div id="popupmasinfo">
+	
+    <div id="btncerrarinfo" onClick="MM_callJS('cerrarref()')">	
+    </div>
+    
+    <div id="titulomasinfo">
+    Las vias del dolor
+    </div>
+    
+    <div id="textomasinfo">
+El dolor inicia en las estructuras especializadas que captan el estímulo doloroso a nivel periférico;  los estímulos dolorosos viajan a través de los nervios periféricos hasta la médula espinal (nivel medular)  que está encargada de modular y transformar este impulso<sup>6</sup>.<br><br>
+
+Viajando a través de diversos tractos nerviosos de la médula espinal, el estímulo llega al cerebro, es aquí donde se percibe y localiza como dolor<sup>2</sup>.
+    </div>
+    
+</div>
+
+<div id="titulo">
+<img src="img/vias/Titulo_vias.png"/>
+</div>
+
+<div class ="video_vias">
+<!--<video src="img/vias/Vias_del_dolor.mp4"/>-->
+<video controls  autoplay width="720" height="480" preload="auto"><source src="img/vias/Vias_del_dolor.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'><source src="img/vias/Vias_del_dolor.mp4" type='video/webm; codecs="vp8, vorbis"'>
+
+</video>
+
+</div>
+
+<div id="generalbotones">   
+    
+	<!--<div id="fondobtnsig">
+    </div>
+    
+  <div id="antbtn"> 
+  <a href="medula.html"><img src="img/Anterior_btn.fw.png"/> </a>
+  </div>
+   
+  <div id="sigbtn"> 
+  <a href="medula4.html"><img src="img/Siguiente_btn.fw.png"/> </a>
+  </div>-->
+    
+    
+    <div id="btnvermasinfo" onClick="MM_callJS('abrirref()')" style="margin-left:-170px">
+    </div>
+    
+    <!--<div id="btnverrx" onClick="MM_callJS('abrirrx()')">
+    </div>-->
+</div>
+
+</body>
+
+</html>

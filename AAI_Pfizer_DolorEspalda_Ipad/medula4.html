@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Colomna</title>
+
+<link href="css/estilo_contenido.css" rel="stylesheet" type="text/css">
+
+<script language="javascript">
+
+function abrirref(){
+		document.getElementById("popupmasinfo").style.display = 'block';
+		}
+	function cerrarref(){
+		document.getElementById("popupmasinfo").style.display = 'none';
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+
+<script language="javascript">
+
+function abrirrx(){
+		document.getElementById("contenido_rx").style.display = 'block';
+		}
+	function cerrarrx(){
+		document.getElementById("contenido_rx").style.display = 'none';
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="contenido_rx">
+
+<div id="btncerrx" onClick="MM_callJS('cerrarrx()')">	
+    </div>
+
+<img src="img/columna/Rx_cervical.png"/>
+
+</div>
+
+<div id="popupmasinfo">
+	
+    <div id="btncerrarinfo" onClick="MM_callJS('cerrarref()')">	
+    </div>
+    
+    <div id="titulomasinfo">
+    La médula espinal
+    </div>
+    
+    <div id="textomasinfo">
+Los dermatomas son las zonas del cuerpo humano que son sensibles gracias a los  nervios que nacen en la médula espinal<sup>5</sup>.<br><br> 
+El nervio C1 no tiene dermatoma<sup>5</sup>.
+    </div>
+    
+</div>
+
+<div id="titulo">
+<img src="img/medula/Titulo_medula.png"/>
+</div>
+
+<div class ="imagen_c" style=" margin-top:10px;margin-left:-75px;"><img src="img/medula/hombres_dermatomas.png"/></div>
+
+    <div id="dematoma1"/ style="">
+    <img src="img/medula/dermatoma1.png"/>
+    </div>
+    
+    <div id="dematoma2"/>
+    <img src="img/medula/dermatoma2.png"/>
+    </div>
+    
+    <div id="dematoma3"/>
+    <img src="img/medula/dermatoma3.png"/>
+    </div>
+    
+    <div id="dematoma4"/>
+    <img src="img/medula/dermatoma4.png"/>
+    </div>
+    
+    <div id="dematomaT"/>
+    <img src="img/medula/dermatoma_text.png"/>
+    </div>
+
+<div id="generalbotones">   
+    
+	<div id="fondobtnsig">
+    </div>
+    
+  <div id="antbtn"> 
+  <a href="medula3.html"><img src="img/Anterior_btn.fw.png"/> </a>
+  </div>
+   
+ <!-- <div id="sigbtn"> 
+  <a href="medula4.html"><img src="img/Siguiente_btn.fw.png"/> </a>
+  </div>-->
+    
+    
+    <div id="btnvermasinfo" onClick="MM_callJS('abrirref()')">
+    </div>
+    
+    <!--<div id="btnverrx" onClick="MM_callJS('abrirrx()')">
+    </div>-->
+</div>
+
+</body>
+
+</html>

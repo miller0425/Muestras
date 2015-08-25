@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <settings>
+    <preloader image="images/Columna_Vert_67.jpg" />
+    <userInterface showZoomButtons="true" showToolTips="true" showHotspotsButton="true" showFullScreenButton="true" showTogglePlayButton="true" showArrows="true" toolbarAlign="center" toolbarBackColor="#FFFFFF" toolbarHoverColor="#808285" toolbarForeColor="#A7A9AE" toolbarBackAlpha="0,9" toolbarAlpha="1" flashEmbedFonts="true" showProgressNumbers="true" progressLoopColor="#e8e8e8" progressNumColor="#949494" />
+    <control dragSpeed="0,13" maxZoom="200" maxZoomFullScreen="200" fullScreenStretch="100" doubleClickZooms="true" disableMouseControl="false" reverseScroll="false" />
+    <rotation firstImage="0" rotate="false" rotatePeriod="1" bounce="false" rotateDirection="-1" forceDirection="false" />
+  </settings>
+  <hotspots />
+  <images>
+    <image src="images/Columna_Vert_67.jpg" />
+    <image src="images/Columna_Vert_69.jpg" />
+    <image src="images/Columna_Vert_71.jpg" />
+    <image src="images/Columna_Vert_73.jpg" />
+    <image src="images/Columna_Vert_75.jpg" />
+    <image src="images/Columna_Vert_77.jpg" />
+    <image src="images/Columna_Vert_79.jpg" />
+    <image src="images/Columna_Vert_81.jpg" />
+    <image src="images/Columna_Vert_83.jpg" />
+    <image src="images/Columna_Vert_85.jpg" />
+    <image src="images/Columna_Vert_87.jpg" />
+    <image src="images/Columna_Vert_89.jpg" />
+    <image src="images/Columna_Vert_91.jpg" />
+    <image src="images/Columna_Vert_93.jpg" />
+    <image src="images/Columna_Vert_95.jpg" />
+    <image src="images/Columna_Vert_97.jpg" />
+    <image src="images/Columna_Vert_99.jpg" />
+    <image src="images/Columna_Vert_101.jpg" />
+    <image src="images/Columna_Vert_103.jpg" />
+    <image src="images/Columna_Vert_105.jpg" />
+    <image src="images/Columna_Vert_107.jpg" />
+    <image src="images/Columna_Vert_109.jpg" />
+    <image src="images/Columna_Vert_111.jpg" />
+    <image src="images/Columna_Vert_113.jpg" />
+    <image src="images/Columna_Vert_115.jpg" />
+    <image src="images/Columna_Vert_117.jpg" />
+    <image src="images/Columna_Vert_119.jpg" />
+    <image src="images/Columna_Vert_121.jpg" />
+    <image src="images/Columna_Vert_123.jpg" />
+    <image src="images/Columna_Vert_125.jpg" />
+    <image src="images/Columna_Vert_127.jpg" />
+    <image src="images/Columna_Vert_129.jpg" />
+    <image src="images/Columna_Vert_131.jpg" />
+    <image src="images/Columna_Vert_133.jpg" />
+    <image src="images/Columna_Vert_135.jpg" />
+    <image src="images/Columna_Vert_137.jpg" />
+    <image src="images/Columna_Vert_139.jpg" />
+    <image src="images/Columna_Vert_141.jpg" />
+    <image src="images/Columna_Vert_143.jpg" />
+    <image src="images/Columna_Vert_145.jpg" />
+    <image src="images/Columna_Vert_147.jpg" />
+    <image src="images/Columna_Vert_149.jpg" />
+    <image src="images/Columna_Vert_150.jpg" />
+  </images>
+</config>

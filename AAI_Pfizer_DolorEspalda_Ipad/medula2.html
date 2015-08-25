@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Colomna</title>
+
+<link href="css/estilo_contenido.css" rel="stylesheet" type="text/css">
+
+<script language="javascript">
+
+function abrirref(){
+		document.getElementById("popupmasinfo").style.display = 'block';
+		}
+	function cerrarref(){
+		document.getElementById("popupmasinfo").style.display = 'none';
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+
+<script language="javascript">
+
+function abrirrx(){
+		document.getElementById("contenido_rx").style.display = 'block';
+		}
+	function cerrarrx(){
+		document.getElementById("contenido_rx").style.display = 'none';
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="contenido_rx">
+
+<div id="btncerrx" onClick="MM_callJS('cerrarrx()')">	
+    </div>
+
+<img src="img/columna/Rx_cervical.png"/>
+
+</div>
+
+<div id="popupmasinfo">
+	
+    <div id="btncerrarinfo" onClick="MM_callJS('cerrarref()')">	
+    </div>
+    
+    <div id="titulomasinfo">
+    La médula espinal
+    </div>
+    
+    <div id="textomasinfo">
+  La médula espinal está constituida por un conducto central rodeado de tejido nervioso<sup>3</sup>.  La parte nerviosa está formada por la sustancia gris y la sustancia blanca<sup>3</sup>. Por la médula espinal van las fibras nerviosas que transmiten mensajes desde y hasta el cerebro<sup>4</sup>.
+    </div>
+    
+</div>
+
+<div id="titulo">
+<img src="img/medula/Titulo_medula.png"/>
+</div>
+
+<div id="imagen_lateral">
+<img src="img/medula/hombre_medula.png"/>
+</div>
+
+<div class ="imagen_c" style="margin-top:100px; margin-left:-140px;"><img src="img/medula/la_medula.fw.png"/></div>
+
+<div id="generalbotones">   
+    
+	<div id="fondobtnsig">
+    </div>
+    
+  <div id="antbtn"> 
+  <a href="medula.html"><img src="img/Anterior_btn.fw.png"/> </a>
+  </div>
+   
+  <div id="sigbtn"> 
+  <a href="medula3.html"><img src="img/Siguiente_btn.fw.png"/> </a>
+  </div>
+    
+    
+    <div id="btnvermasinfo" onClick="MM_callJS('abrirref()')">
+    </div>
+    
+    <!--<div id="btnverrx" onClick="MM_callJS('abrirrx()')">
+    </div>-->
+</div>
+
+</body>
+
+</html>

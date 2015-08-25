@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Colomna</title>
+
+<link href="css/estilo_contenido.css" rel="stylesheet" type="text/css">
+
+<script language="javascript">
+
+function abrirDolor1(){
+		document.getElementById("popupmasinfo1").style.display = 'block';
+		}
+		
+function cerrarmasinfo1(){
+		document.getElementById("popupmasinfo1").style.display = 'none';
+		}
+
+function abrirDolor2(){
+		document.getElementById("popupmasinfo2").style.display = 'block';
+		}
+		
+function cerrarmasinfo2(){
+		document.getElementById("popupmasinfo2").style.display = 'none';
+		}
+
+function abrirDolor3(){
+		document.getElementById("popupmasinfo3").style.display = 'block';
+		}
+		
+function cerrarmasinfo3(){
+		document.getElementById("popupmasinfo3").style.display = 'none';
+		}
+				
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+
+</script>
+
+
+</head>
+
+<body>
+
+<div id="popupmasinfo1">
+	
+    <div id="btncerrarinfo1" onClick="MM_callJS('cerrarmasinfo1()')">	
+    </div>
+    
+    <div id="textomasinfo" style="width:200px;">
+    Algunas condiciones que causan dolor nociceptivo son:<br><br>
+    
+    • Osteoartritis<br>
+    • Artritis reumatoide<br>
+    • Trauma<br>
+    • Espondilitis anquilosante
+    </div>
+    
+</div>
+
+<div id="popupmasinfo2">
+	
+    <div id="btncerrarinfo2" onClick="MM_callJS('cerrarmasinfo2()')">	
+    </div>
+    
+    <div id="textomasinfo" style="width:200px;">
+    Algunas condiciones que producen dolor mixto son:<br><br>
+
+    • Dolor lumbar por radiculopatía<br>
+    • Radiculopatía cervical<br>
+    • Dolor posterior a la cirugía de 
+      columna<br>
+    • Síndrome del túnel del carpo<br>
+    • Dolor por cáncer
+    </div>
+    
+</div>
+
+<div id="popupmasinfo3">
+	
+    <div id="btncerrarinfo3" onClick="MM_callJS('cerrarmasinfo3()')">	
+    </div>
+    
+    <div id="textomasinfo" style="width:200px;">
+    Las causas del dolor neuropático son diversas, entre ellas: <br><br>
+
+    • Neuropatía diabética<br>
+    • Neuralgia posherpética<br>
+    • Neuralgia del trigémino<br>
+    • Neuralgia posquirúrgica<br>
+    • Neuropatía postraumática<br>
+    • Trauma de la médula espinal<br>
+    • Dolor posterior a un evento cerebrovascular
+    </div>
+    
+</div>
+
+<div id="titulo">
+<img src="img/dolor_nociceptivo/Titulo.png"/>
+</div>
+
+<div id="nociceptivo">
+    <div id="btnvermasinfo" onClick="MM_callJS('abrirDolor1()')" style=" margin-top:546px; margin-left:-160px;">
+    </div>
+</div>
+
+<div id ="nociceptivo2">
+	<div id="btnvermasinfo" onClick="MM_callJS('abrirDolor2()')" style=" margin-top:546px; margin-left:-160px;">
+    </div>
+</div>
+
+<div id ="nociceptivo3">
+	<div id="btnvermasinfo" onClick="MM_callJS('abrirDolor3()')" style=" margin-top:546px; margin-left:-160px;">
+    </div>
+</div>
+
+
+</body>
+
+</html>

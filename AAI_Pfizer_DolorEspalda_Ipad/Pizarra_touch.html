@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Documento sin título</title>
+<style type="text/css">
+
+#container{	
+	margin-top:-10px;
+	margin-left:-10px;
+	}
+
+#controles{	
+	margin-left:45px;
+	margin-top:-23px;
+}
+
+#controles ul {
+	
+	list-style:none;
+		}
+		
+#controles ul li {
+	float:left;
+	margin-top:10px;
+	width:13px;
+	height:13px;
+	padding:10px;
+	text-decoration:none;
+	margin-left:8px;
+	border-radius:3px;
+	-webkit-box-shadow:-4px 5px 6px #555;
+		}
+		
+#controles ul li:hover, active {
+			-webkit-box-shadow:-1px 1px 2px #555;
+		}
+</style> 
+
+<script type="text/javascript" charset="utf-8"> 
+window.addEventListener('load',function(){
+		// obtener elemtos del canvas
+		var canvas = document.getElementById('sketchpad');
+		//variables para manejo de los colores
+		var Blue = document.getElementById('botonBlu');
+		var Red = document.getElementById('botonRe');
+		var Black = document.getElementById('botonBla');
+		var Claro = document.getElementById('botonWh');
+		var delgado = document.getElementById('botonD');
+		var medio = document.getElementById('botonM');
+		var grueso = document.getElementById('botonG');
+		
+		var context = canvas.getContext('2d');
+		
+		var colorBlue = "blue";
+		var colorRed = "red";
+		var colorBlack = "black";
+		var colorWhite = "#F7F7F7";
+		
+		var curColor = colorBlack;
+		var tamano = 3;
+		
+		// crear trazos atravez de los toques 
+		var drawer = {
+			isDrawing: false,
+			touchstart: function(coors){
+				context.beginPath();
+				context.moveTo(coors.x, coors.y);
+				context.strokeStyle = curColor; /*curColor; linea color*/
+				context.lineWidth = tamano;/*ancho*/
+				context.lineJoin = "round";
+				/*context.fillStyle = "rgba(0,0,0,1)";  red*/
+				this.isDrawing = true;
+			},
+			touchmove: function(coors){
+				if (this.isDrawing) {
+			        context.lineTo(coors.x, coors.y);
+			        context.stroke();
+				}
+			},
+			touchend: function(coors){
+				if (this.isDrawing) {
+			        this.touchmove(coors);
+			        this.isDrawing = false;
+				}
+			}
+		};
+		// funcion que pasa las cordenadas de toque
+		function draw(event){
+			// obtener las cordenadas de toque  
+			var coors = {
+				x: event.targetTouches[0].pageX,
+				y: event.targetTouches[0].pageY
+			};
+			// transmitir las coordenadas al controlador apropiado
+			drawer[event.type](coors);
+		}
+		
+		// adjuntar los eventos touchstart, touchmove, touchend event listeners.
+		
+	    canvas.addEventListener('touchstart',draw, false);
+	    canvas.addEventListener('touchmove',draw, false);
+	    canvas.addEventListener('touchend',draw, false);
+		
+		//listeners + funciones para cambio de colores
+
+		
+	
+		
+		Blue.addEventListener('touchstart',function(event){
+			curColor = colorBlue;	
+		},false);
+		
+		Red.addEventListener('touchstart',function(event){
+			curColor = colorRed;	
+		},false);
+		
+		Black.addEventListener('touchstart',function(event){
+			curColor = colorBlack;	
+		},false);
+		
+		Claro.addEventListener('touchstart',function(event){
+			curColor = colorWhite;	
+		},false);
+		
+		// listener + funcion tamaño linea
+		delgado.addEventListener('touchstart',function(event){
+			tamano = 3;	
+		},false);
+		
+		medio.addEventListener('touchstart',function(event){
+			tamano = 7;	
+		},false);
+		
+		grueso.addEventListener('touchstart',function(event){
+			tamano = 12;
+		},false);
+
+		
+		
+		// prevenir el scrolling
+		document.body.addEventListener('touchmove',function(event){
+		event.preventDefault();
+		},false);	// end body.onTouchMove
+		
+	},false);	// end window.onLoad
+	
+/*
+function clearCanvas()
+{
+	context.fillStyle = '#ffffff'; // Work around for Chrome
+	context.fillRect(0, 0, canvasWidth, canvasHeight); // Fill in the canvas with white
+	canvas.width = canvas.width; // clears the canvas 
+}
+
+*/
+
+
+</script>
+</head>
+
+<body>
+
+	<div id="container">
+        <canvas id="sketchpad" width="800" height="660" ><!--style="border: 2px solid blue; -->
+          Sorry, your browser is not supported.
+        </canvas>		
+  	</div>
+    <div id="controles">
+    	<ul>
+            <li id="botonBlu" style="background:url(img/azul.png); background-size:contain;"></li>
+            <li id="botonRe" style="background:url(img/rojo.png); background-size:contain;"></li>
+            <li id="botonWh" style="background:url(img/blanco.png); background-size:contain;"></li>
+            <li id="botonBla" style="background:url(img/negro.png); background-size:contain;"></li>
+            <li id="botonD" style="background:url(img/delgado.png); background-size:contain;"></li>
+            <li id="botonM" style="background:url(img/medio.png); background-size:contain;"></li>
+            <li id="botonG" style="background:url(img/grueso.png); background-size:contain;"></li> 
+        </ul>
+    </div> 
+  
+         
+</body>
+</html>
