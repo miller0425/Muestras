@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>actividad</title>
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<style type="text/css">
+body {
+	margin: 0;
+	padding: 0;
+}
+#contenido {
+	position: absolute;
+	width: 960px;
+	height: 465px;
+	display: block;
+	background: url(images/actividad.jpg) no-repeat;
+}
+
+#f1 {
+	position: absolute;
+	width: 18px;
+	height: 21px;
+	top: 183px;
+	left: 745px;
+	background:rgba(255,0,4,0);
+	cursor:pointer;
+	}
+#v1 {
+	position: absolute;
+	width: 18px;
+	height: 21px;
+	top: 183px;
+	left: 773px;
+	background:rgba(255,0,4,0);
+	cursor:pointer;
+	}
+#f2 {
+	position: absolute;
+	width: 18px;
+	height: 21px;
+	top: 225px;
+	left: 745px;
+	background: rgba(255,0,4,0);
+	cursor:pointer;
+	}
+#v2 {
+	position: absolute;
+	width: 18px;
+	height: 21px;
+	top: 225px;
+	left: 773px;
+	background: rgba(255,0,4,0);
+	cursor:pointer;
+	}
+#f3 {
+	position: absolute;
+	width: 18px;
+	height: 21px;
+	top: 268px;
+	left: 745px;
+	background: rgba(255,0,4,0);
+	cursor:pointer;
+	}
+#v3 {
+	position: absolute;
+	width: 18px;
+	height: 21px;
+	top: 268px;
+	left: 773px;
+	background: rgba(255,0,4,0);
+	cursor:pointer;
+	}
+#f4 {
+	position: absolute;
+	width: 18px;
+	height: 21px;
+	top: 309px;
+	left: 745px;
+	background: rgba(255,0,4,0);
+	cursor:pointer;
+	}
+#v4 {
+	position: absolute;
+	width: 18px;
+	height: 21px;
+	top: 309px;
+	left: 773px;
+	background: rgba(255,0,4,0);
+	cursor:pointer;
+	}
+#veri {
+	position: absolute;
+	width: 74px;
+	height: 27px;
+	top: 388px;
+	left: 716px;
+	background: url(images/verificarbtn.png) no-repeat;
+	cursor: pointer;
+	}
+
+#cir1, #cir1_1, #cir2, #cir2_2, #cir3_3, #cir3, #cir4_4, #cir4 {
+	width:25px;
+	height:25px;
+	background:url(images/circulo.png) no-repeat;
+	display:none;
+	}
+#cir1 {
+	position: absolute;
+	top: 182px;
+	left: 741px;
+	}
+#cir1_1 {
+	position: absolute;
+	top: 182px;
+	left: 769px;
+	}
+#cir2 {
+	position: absolute;
+	top: 224px;
+	left: 741px;
+	}
+#cir2_2 {
+	position: absolute;
+	top: 224px;
+	left: 769px;
+	}
+#cir3 {
+	position: absolute;
+	top: 265px;
+	left: 741px;
+	}
+#cir3_3 {
+	position: absolute;
+	top: 265px;
+	left: 769px;
+	}
+#cir4 {
+	position: absolute;
+	top: 305px;
+	left: 741px;
+	}
+#cir4_4 {
+	position: absolute;
+	top: 305px;
+	left: 769px;
+	}
+#bien {
+	position:absolute;
+	width:960px;
+	height:465px;
+	background:rgba(0,0,0,0.55);
+	display:none;
+	}
+.bien {
+	width:159px;
+	height:79px;
+	margin:15% 42%;
+	
+	}
+#rep {
+	position: absolute;
+	color: rgba(255,255,255,1.00);
+	cursor: pointer;
+	font-size: 24px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	left: 450px;
+	top: 250px;
+	width: 83px;
+	height: 28px;
+	}
+#mal {
+	position:absolute;
+	width:960px;
+	height:465px;
+	background:rgba(0,0,0,0.55);
+	display:none;
+	z-index:3;
+	}
+.mal {
+	width:566px;
+	height:49px;
+	margin:15% 20%;
+	
+	}
+#chulo1 {
+	position: absolute;
+	top: 184px;
+	left: 744px;
+	width: 20px;
+	height: 20px;
+	display:none;
+	}
+#chulo2 {
+	position: absolute;
+	top: 225px;
+	left: 773px;
+	width: 20px;
+	height: 20px;
+	display:none;
+	}
+#chulo3 {
+	position: absolute;
+	top: 268px;
+	left: 773px;
+	width: 20px;
+	height: 20px;
+	display:none;
+	}
+#chulo4 {
+	position: absolute;
+	top: 310px;
+	left: 773px;
+	width: 20px;
+	height: 20px;
+	display:none;
+	}
+#equ1 {
+	position: absolute;
+	top: 184px;
+	left: 771px;
+	width: 20px;
+	height: 20px;
+	display:none;
+	}
+#equ2 {
+	position: absolute;
+	top: 227px;
+	left: 742px;
+	width: 20px;
+	height: 20px;
+	display:none;
+	}
+#equ3 {
+	position: absolute;
+	top: 269px;
+	left: 742px;
+	width: 20px;
+	height: 20px;
+	display:none;
+	}
+#equ4{
+	position: absolute;
+	top: 310px;
+	left: 742px;
+	width: 20px;
+	height: 20px;
+	display:none;
+	}
+</style>
+<script type="application/javascript">
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+
+function f1(){
+	$("#cir1").fadeIn('fast');
+	$("#cir1_1").fadeOut('fast');
+	
+	}
+function v1(){
+	$("#cir1_1").fadeIn('fast');
+	$("#cir1").fadeOut('fast');
+	
+	}
+function f2(){
+	$("#cir2").fadeIn('fast');
+	$("#cir2_2").fadeOut('fast');
+	}
+function v2(){
+	$("#cir2_2").fadeIn('fast');
+	$("#cir2").fadeOut('fast');
+	}
+function f3(){
+	$("#cir3").fadeIn('fast');
+	$("#cir3_3").fadeOut('fast');
+	}
+function v3(){
+	$("#cir3_3").fadeIn('fast');
+	$("#cir3").fadeOut('fast');
+	}
+function f4(){
+	$("#cir4").fadeIn('fast');
+	$("#cir4_4").fadeOut('fast');
+	}
+function v4(){
+	$("#cir4_4").fadeIn('fast');
+	$("#cir4").fadeOut('fast');
+	}
+function verificar(){
+	
+	p=0;
+		
+		if($("#cir1").is(':visible')) {
+		$("#chulo1").fadeIn('fast');
+		p+=1;
+		}else if ($("#cir1_1").is(':visible')){
+			$("#equ1").fadeIn('fast');
+			}
+		
+		if($("#cir2").is(':visible')) {  
+        $("#equ2").fadeIn('fast');  
+		
+        }else if ($("#cir2_2").is(':visible')){
+			$("#chulo2").fadeIn('fast');
+			p+=1;
+			}
+		if($("#cir3").is(':visible')) {  
+        $("#equ3").fadeIn('fast');  
+		
+        }else if ($("#cir3_3").is(':visible')){
+			$("#chulo3").fadeIn('fast');
+			p+=1;
+			}
+		if($("#cir4").is(':visible')) {  
+        $("#equ4").fadeIn('fast');  
+		
+        }else if ($("#cir4_4").is(':visible')){
+			$("#chulo4").fadeIn('fast');
+			p+=1;
+			}
+		
+        
+		if(p==4){
+			$("#bien").fadeIn('fast');
+		}
+		else {
+			$("#mal").fadeIn('fast');
+			}
+	  
+} 
+
+function rep(){
+	p=0;
+	$("#bien").fadeOut('fast');
+	$("#mal").fadeOut('fast');
+	$("#chulo1").fadeOut('fast');
+	$("#chulo2").fadeOut('fast');
+	$("#chulo3").fadeOut('fast');
+	$("#chulo4").fadeOut('fast');
+	$("#equ1").fadeOut('fast');
+	$("#equ2").fadeOut('fast');
+	$("#equ3").fadeOut('fast');
+	$("#equ4").fadeOut('fast');
+	$("#cir1").fadeOut('fast');
+	$("#cir1_1").fadeOut('fast');
+	$("#cir2").fadeOut('fast');
+	$("#cir2_2").fadeOut('fast');
+	$("#cir3").fadeOut('fast');
+	$("#cir3_3").fadeOut('fast');
+	$("#cir4").fadeOut('fast');
+	$("#cir4_4").fadeOut('fast');
+	}
+</script>
+</head>
+
+<body>
+<div id="contenido">
+
+<div id="f1" onClick="MM_callJS('f1()')"></div>
+<div id="v1" onClick="MM_callJS('v1()')"></div>
+<div id="f2" onClick="MM_callJS('f2()')"></div>
+<div id="v2" onClick="MM_callJS('v2()')"></div>
+<div id="f3" onClick="MM_callJS('f3()')"></div>
+<div id="v3" onClick="MM_callJS('v3()')"></div>
+<div id="f4" onClick="MM_callJS('f4()')"></div>
+<div id="v4" onClick="MM_callJS('v4()')"></div>
+
+<div id="veri" onClick="MM_callJS('verificar()')"></div>
+
+<div id="cir1"></div>
+<div id="cir1_1"></div>
+<div id="cir2"></div>
+<div id="cir2_2"></div>
+<div id="cir3"></div>
+<div id="cir3_3"></div>
+<div id="cir4"></div>
+<div id="cir4_4"></div>
+
+<div id="chulo1"><img src="images/chulo.png" width="20"></div>
+<div id="chulo2"><img src="images/chulo.png" width="20"></div>
+<div id="chulo3"><img src="images/chulo.png" width="20"></div>
+<div id="chulo4"><img src="images/chulo.png" width="20"></div>
+
+<div id="equ1"><img src="images/equiz.png" width="23"></div>
+<div id="equ2"><img src="images/equiz.png" width="23"></div>
+<div id="equ3"><img src="images/equiz.png" width="23"></div>
+<div id="equ4"><img src="images/equiz.png" width="23"></div>
+  
+  <div id="bien"><img class="bien" src="images/bien.png">
+  <div id="rep" onClick="MM_callJS('rep()')">Repetir</div> 
+  </div>
+  
+  <div id="mal"><img class="mal" src="images/mal.png">
+  <div id="rep" onClick="MM_callJS('rep()')">Repetir</div> 
+  </div>
+  
+</div>
+</body>
+</html>

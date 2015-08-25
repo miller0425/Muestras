@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>33</title>
+
+
+<script type="text/javascript">
+if (typeof(AN) === 'undefined') {
+       var AN = {}; 
+    }
+    AN.Controller = function() {
+        return {
+            scenes: {},
+            scenesArray: [],
+            currentSceneID: -1,
+            olElement: null,
+            events: {},
+            useOrmma: false,
+            prefix: "",
+            basePath: "",
+
+            setConfig: function(configData) {
+
+                this.events = configData.events;
+                this.prefix = configData.cssPrefix;
+                this.projectActions = configData.projectActions;
+                this.userData = {};
+                if (configData.basePath) {
+                    this.basePath = configData.basePath;
+                }
+
+                this.olElement = document.querySelector('#' + configData.parentId + ' ol');
+                var liElements = this.olElement.children;
+
+                if (configData.ormma) {
+                    this.useOrmma = true;
+                }
+
+                this.sceneIdByName = {};
+                var scene;
+                for (var i=0; i < configData.scenes.length; i++) {
+                    scene = configData.scenes[i];
+                    scene.element = liElements[i];
+                    this.scenes[scene.id] = scene;
+                    this.scenesArray.push(scene);
+                    if (scene.name) {
+                        this.sceneIdByName[scene.name] = scene.id;
+                    }
+                    
+                }
+
+                this.setupListeners();
+                
+                this.startSceneByID = this.startSceneById; /*compat*/
+                
+                if (this.projectActions.init) {
+                    this.projectActions.init.call(this.userData, this);
+                }
+
+                this.startSceneById(this.scenesArray[0].id);
+
+            },
+
+            runningAnimationCount: 0,
+            browser: 'webkit',
+
+            setupListeners: function() {
+                var me = this;
+
+                var eventName = "webkitAnimationEnd";
+
+                if (document.body.style.MozAnimationName !== undefined) {
+                    eventName = "animationend";
+                    this.browser = "moz";
+                }
+
+                this.olElement.addEventListener(eventName, function(event) {
+                    var parent;
+                    if (me.browser === "moz") {
+                        parent = event.target;
+                        while (parent = parent.parentNode) {
+                            if (parent === me.scenes[me.currentSceneID].element) {
+                                me.onAnimationEnd();
+                                return;
+                            }
+                        }
+                    } else {
+                        me.onAnimationEnd();
+                    }
+                },false);
+
+                function addMousemoveListenerTo(scene) {
+                    scene.element.addEventListener('mousemove', function(event){
+                        scene.mousemoveAction.call(me.userData,me, event);
+                    }, false);
+                }
+
+                var scene;
+                for (var i=0; i < this.scenesArray.length; i++) {
+                    scene = this.scenesArray[i];
+                    if (scene.mousemoveAction) {
+
+                        addMousemoveListenerTo(scene);
+                    }
+                }
+
+                function addListenerTo(element, eventType, aFunction) {
+                    element.addEventListener(eventType, function(event){
+                        aFunction.call(me.userData,me,event);
+                    }, false);
+                }
+
+                var element, event, type;
+                for (var i=0; i < this.events.length; i++) {
+                    event = this.events[i];
+                    var type = event.type;
+                    if (this.browser === 'moz' && event.mozType) {
+                        type = event.mozType;
+                    }
+                    element = document.getElementById(event.id);
+                    addListenerTo(element, type, event.handler);
+                }
+
+            },
+
+            onAnimationEnd: function() {
+
+                this.runningAnimationCount--;
+
+                if (this.runningAnimationCount === 0) {
+                    var waitTime = this.scenes[this.currentSceneID].endWaitTime;
+                    if (waitTime) {
+                        var me = this;
+                        this.sceneEndTimeout = setTimeout(function(){
+                            me.onSceneFinish();
+                        },waitTime * 1000);
+                    } else {
+                        this.onSceneFinish();
+                    }
+                }
+            },
+            
+            forceRefresh: function(sceneID) {
+                this.forceRefreshValue = this.scenes[sceneID].element.offsetHeight;
+            },
+            
+            startSceneByName: function(name) {
+                var id = this.sceneIdByName[name];
+                if (id !== undefined) {
+                    this.startSceneById(id);
+                }
+            },
+
+            startSceneById: function(sceneID) {
+
+                var restart = false;
+                if (sceneID === this.currentSceneID) {
+                    restart = true;
+                } else if (this.currentSceneID !== -1) {
+                    this.scenes[this.currentSceneID].element.setAttribute('class','');
+                }
+
+                clearTimeout(this.sceneEndTimeout);
+
+                this.runningAnimationCount = this.scenes[sceneID].animationCount;
+
+                this.currentSceneID = sceneID;
+                var nextScene = this.scenes[sceneID];
+
+                if (restart || this.browser === 'moz') {
+                    nextScene.element.setAttribute('class','run restart');
+                    this.forceRefresh(sceneID);
+                }
+                
+                nextScene.element.setAttribute('class','run');
+                
+                if (!restart && this.useOrmma) {
+                   this.ormmaNextScene(nextScene);
+                }
+
+                if (nextScene.startAction) {
+                    nextScene.startAction.call(this.userData, this);
+                }
+            
+                if (nextScene.animationCount === 0 ) {
+                    this.onSceneFinish();
+                }
+
+            },
+
+            replayScene: function() {
+                this.startSceneById(this.currentSceneID);
+            },
+
+            onSceneFinish: function() {
+                if (this.scenes[this.currentSceneID].endAction) {
+                    this.scenes[this.currentSceneID].endAction.call(this.userData,this);
+                }
+            },
+
+            goToNextScene: function() {
+                var nextIndex = this.scenesArray.indexOf(this.scenes[this.currentSceneID]) + 1;
+                var nextScene;
+                if (nextScene = this.scenesArray[nextIndex]) {
+                    this.startSceneById(nextScene.id);
+                }
+            },
+            goToPreviousScene: function() {
+                var previousIndex = this.scenesArray.indexOf(this.scenes[this.currentSceneID]) - 1;
+                var nextScene;
+                if (previousIndex >= 0) {
+                    this.startSceneById(this.scenesArray[previousIndex].id);
+                }
+            },
+            goToURL: function(aURL) {
+                document.location.href = aURL;
+            },
+            
+            getElementById: function(animatorId) {
+                var cssId = this.prefix + animatorId;
+                return document.getElementById(cssId);
+            },
+            getUrlForLocalAsset: function(assetName) {
+                var url = 'assets/' + assetName;
+                if (this.basePath) {
+                    url = this.basePath + '/' + url;
+                }
+                return url;
+            },
+            ormmaNextScene: function(nextScene) {
+                var currentState = ormma.getState();
+
+                if (nextScene.dimensions.expanded) {
+                    //expanded state
+                    //check if we're expanded
+                    var maxSize = ormma.getMaxSize();
+                    if (currentState !== 'expanded') {
+                        ormma.expand({
+                            x:0,
+                            y:0,
+                            width: maxSize.width,
+                            height: maxSize.height
+                        });
+                    }
+
+                    var transform = "";
+                    var elementHeight = nextScene.element.offsetHeight;
+                    var elementWidth = nextScene.element.offsetWidth;
+                    var y = (maxSize.height - elementHeight) / 2;
+                    var x = (maxSize.width - elementWidth) / 2;
+                    transform += " translate3d("+Math.round(x)+"px,"+Math.round(y)+"px,0)";   
+
+                    if (nextScene.dimensions.fit) {
+                        var scaleFactor = Math.min(maxSize.width/elementWidth, maxSize.height/elementHeight);                    
+                        transform += " scale3d("+scaleFactor+","+scaleFactor+",1)";
+                    }
+                    nextScene.element.style.webkitTransform = transform;
+
+                } else {
+                
+                    if (currentState === 'expanded') {
+                        ormma.close();
+                    }
+                    ormma.resize(nextScene.dimensions.width,nextScene.dimensions.height);
+                }
+            }
+        };
+    };
+
+window.addEventListener('load', function(){
+    var configData = {
+        parentId: 'an-anim',
+        cssPrefix: '',
+        ormma: false,
+        mraid: false,
+        scenes: [{id: 0,animationCount: 13,duration: 3.862,lastKeyframeTime: 3.862,dimensions: {height: 768,width: 1024,expanded: false,fit: false}}],
+        projectActions: {},
+        events: [],
+        externalResources: []
+    };
+    setTimeout(function(){
+       var controller = new AN.Controller;
+       controller.setConfig(configData);
+    },0);
+}, false);
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+</script>
+
+
+<style type="text/css">
+
+#an-anim > ol {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+#an-anim > ol > li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+#an-anim > ol > li.run {
+    display: block;
+}
+
+#an-anim .an-stage {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#an-anim .an-stage div {
+    position: absolute;
+}
+
+.an-stage * {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+#an-anim .an-stage img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#an-anim .AN-Scene-Description {
+    display: none;
+}
+
+#an-anim iframe {
+    border: none;
+    height: 100%;
+    width: 100%
+}
+
+#an-anim .restart * {
+    -webkit-animation-name: none !important;
+}
+
+#an-obj-1 {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    width: 1024px;
+    height: 768px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-1 {
+    0% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-1 {
+    -webkit-animation-name: ani-an-obj-1;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-1 {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-1 {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    opacity: 0;
+}
+
+#an-obj-2 {
+    -webkit-transform: translate3d(761px, 701px, 0px);
+    width: 259px;
+    height: 19px;
+    top: 0;
+    left: 0;
+    color: rgba(255,255,255,1);
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: rgba(0,0,0,0.7548076923076923) 0px 0px 3px;
+}
+
+#an-obj-3 {
+    -webkit-transform: translate3d(927px, 131px, 0px);
+    width: 64px;
+    height: 63px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-3 {
+    0% {
+        -webkit-transform: translate3d(927px, 111px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(927px, 131px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-3 {
+    -webkit-animation-name: ani-an-obj-3;
+    -webkit-animation-duration: 1.0045s;
+    -webkit-animation-delay: 0.5023s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-3 {
+    -webkit-transform: translate3d(927px, 131px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-3 {
+    -webkit-transform: translate3d(927px, 111px, 0px);
+    opacity: 0;
+}
+
+#an-obj-4 {
+    -webkit-transform: translate3d(927px, 198px, 0px);
+    width: 64px;
+    height: 63px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-4 {
+    0% {
+        -webkit-transform: translate3d(927px, 178px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(927px, 198px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-4 {
+    -webkit-animation-name: ani-an-obj-4;
+    -webkit-animation-duration: 1.0045s;
+    -webkit-animation-delay: 0.991s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-4 {
+    -webkit-transform: translate3d(927px, 198px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-4 {
+    -webkit-transform: translate3d(927px, 178px, 0px);
+    opacity: 0;
+}
+
+#an-obj-5 {
+    -webkit-transform: translate3d(927px, 266px, 0px);
+    width: 64px;
+    height: 63px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-5 {
+    0% {
+        -webkit-transform: translate3d(927px, 246px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(927px, 266px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-5 {
+    -webkit-animation-name: ani-an-obj-5;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1.5023s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-5 {
+    -webkit-transform: translate3d(927px, 266px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-5 {
+    -webkit-transform: translate3d(927px, 246px, 0px);
+    opacity: 0;
+}
+
+#an-obj-6 {
+    -webkit-transform: translate3d(927px, 334px, 0px);
+    width: 64px;
+    height: 63px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-6 {
+    0% {
+        -webkit-transform: translate3d(927px, 314px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(927px, 334px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-6 {
+    -webkit-animation-name: ani-an-obj-6;
+    -webkit-animation-duration: 0.9865s;
+    -webkit-animation-delay: 2.0045s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-6 {
+    -webkit-transform: translate3d(927px, 334px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-6 {
+    -webkit-transform: translate3d(927px, 314px, 0px);
+    opacity: 0;
+}
+
+#an-obj-7 {
+    -webkit-transform: translate3d(927px, 402px, 0px);
+    width: 64px;
+    height: 63px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-7 {
+    0% {
+        -webkit-transform: translate3d(927px, 382px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(927px, 402px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-7 {
+    -webkit-animation-name: ani-an-obj-7;
+    -webkit-animation-duration: 1.0091s;
+    -webkit-animation-delay: 2.4977s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-7 {
+    -webkit-transform: translate3d(927px, 402px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-7 {
+    -webkit-transform: translate3d(927px, 382px, 0px);
+    opacity: 0;
+}
+
+#an-obj-8 {
+    -webkit-transform: translate3d(19px, 727px, 0px);
+    width: 37px;
+    height: 37px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-8 {
+    0% {
+        -webkit-transform: translate3d(19px, 727px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(19px, 727px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-8 {
+    -webkit-animation-name: ani-an-obj-8;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-8 {
+    -webkit-transform: translate3d(19px, 727px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-8 {
+    -webkit-transform: translate3d(19px, 727px, 0px);
+    opacity: 0;
+}
+
+
+#an-obj-11 {
+    -webkit-transform: translate3d(998px, 744px, 0px) scale3d(1, 1, 1);
+    width: 30px;
+    height: 26px;
+    top: 0;
+    left: 0;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    color: rgba(255,255,255,1);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#an-obj-12 {
+    -webkit-transform: translate3d(20px, 116px, 0px);
+    width: 336px;
+    height: 45px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-12 {
+    0% {
+        -webkit-transform: translate3d(20px, 116px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(20px, 116px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-12 {
+    -webkit-animation-name: ani-an-obj-12;
+    -webkit-animation-duration: 0.9945s;
+    -webkit-animation-delay: 1.0054s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-12 {
+    -webkit-transform: translate3d(20px, 116px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-12 {
+    -webkit-transform: translate3d(20px, 116px, 0px);
+    opacity: 0;
+}
+
+#an-obj-13 {
+    -webkit-transform: translate3d(20px, 185px, 0px);
+    width: 737px;
+    height: 420px;
+    top: 0;
+    left: 0;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-size: 15px;
+    color: rgba(80,80,80,1);
+    text-align: left;
+}
+
+@-webkit-keyframes ani-an-obj-13 {
+    0% {
+        -webkit-transform: translate3d(20px, 185px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(20px, 185px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-13 {
+    -webkit-animation-name: ani-an-obj-13;
+    -webkit-animation-duration: 1.0057s;
+    -webkit-animation-delay: 2.0101s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-13 {
+    -webkit-transform: translate3d(20px, 185px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-13 {
+    -webkit-transform: translate3d(20px, 185px, 0px);
+    opacity: 0;
+}
+
+#an-obj-14 {
+    -webkit-transform: translate3d(20px, 635px, 0px);
+    width: 562px;
+    height: 58px;
+    top: -45px;
+    left: 0;
+    font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+    font-size: 10px;
+    color: rgba(80,80,80,1);
+    text-align: left;
+}
+
+@-webkit-keyframes ani-an-obj-14 {
+    0% {
+        -webkit-transform: translate3d(20px, 635px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(20px, 635px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-14 {
+    -webkit-animation-name: ani-an-obj-14;
+    -webkit-animation-duration: 1.0058s;
+    -webkit-animation-delay: 2.8562s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-14 {
+    -webkit-transform: translate3d(20px, 635px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-14 {
+    -webkit-transform: translate3d(20px, 635px, 0px);
+    opacity: 0;
+}
+
+#an-obj-15 {
+    -webkit-transform: translate3d(600px, 612px, 0px);
+    width: 159px;
+    height: 80px;
+    top: 0;
+    left: 0;
+}
+
+@-webkit-keyframes ani-an-obj-15 {
+    0% {
+        -webkit-transform: translate3d(600px, 612px, 0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translate3d(600px, 612px, 0px);
+        opacity: 1;
+    }
+}
+
+.run #an-obj-15 {
+    -webkit-animation-name: ani-an-obj-15;
+    -webkit-animation-duration: 1.0045s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-fill-mode: both;
+}
+
+#an-obj-15 {
+    -webkit-transform: translate3d(600px, 612px, 0px);
+    opacity: 1;
+}
+
+.restart #an-obj-15 {
+    -webkit-transform: translate3d(600px, 612px, 0px);
+    opacity: 0;
+}
+
+#an-scene-0 .an-stage {
+    height: 768px;
+    width: 1024px;
+    background-color: rgba(255,255,255,1);
+}
+
+</style>
+
+
+
+</head>
+<body style="margin:0;">
+<div id="an-anim"><ol>
+
+<li id="an-scene-0" >
+<div class="an-stage">
+    <div id="an-obj-1"><div><img  height="768" width="1024"  src="assets/fondoborde.png"></div>
+        <div id="an-obj-2"><span>Estructura Dual, Acción Diferenciada</span></div>
+    </div>
+    <div id="an-obj-3"><div><img  src="assets/btnm.png" width="64"  height="63" onClick="MM_goToURL('parent','pag10.html');return document.MM_returnValue"></div></div>
+    <div id="an-obj-4"><div><img  src="assets/btnb.png" width="64"  height="63" onClick="MM_goToURL('parent','pag32.html');return document.MM_returnValue"></div></div>
+    <div id="an-obj-5"><div><img  src="assets/btns.png" width="64"  height="63" onClick="MM_goToURL('parent','pag25.html');return document.MM_returnValue"></div></div>
+    <div id="an-obj-6"><div><img  src="assets/btnd.png" width="64"  height="63" onClick="MM_goToURL('parent','pag29.html');return document.MM_returnValue"></div></div>
+    <div id="an-obj-7"><div><img  src="assets/btnr.png" width="64"  height="63" onClick="MM_goToURL('parent','pag33.html');return document.MM_returnValue"></div></div>
+    <div id="an-obj-8"><div><img  src="assets/btnant.png" width="37"  height="37" onClick="MM_goToURL('parent','pag32.html');return document.MM_returnValue"></div></div>
+    <div id="an-obj-11"><span>33</span></div>
+    <div id="an-obj-12"><div><img  height="45" width="336"  src="assets/tituloreferencias.png"></div></div>
+    <div id="an-obj-13"><span>1.- Lorenzo M. Leoni et al. Mechanism of Action: The Unique Pattern of Bendamustine-Induced Cytotoxicity. Semin Hematol
+48:S12–S23. © 2011.<br>
+2.- Wolfgang U. Knauf et al. Phase III Randomized Study of Bendamustine Compared With Chlorambucil in Previously
+Untreated Patients With Chronic Lymphocytic Leukemia. Clin Oncol 27:4378-4384. © 2009.<br>
+3.- Brad S. Kahlet al. Bendamustine Is Effective Therapy in Patients With Rituximab-Refractory, Indolent B-cell Non-Hodgkin
+Lymphoma. Cancer January 1, 2010.<br>
+4.- Pönish W et al. Treatment of Bendamustine and Prednisone in patients with newly diagnosed multiple myeloma results
+in superior complete response rate, prolonged time to treatment failure and improved quality of life compared to treatment
+with Melphalan and Prednisone—a randomized phase III study of the East German Study Group of Hematology and
+Oncology (OSHO) J Cancer Res Clin Oncol (2006) 132: 205–212.<br>
+5.- Oficio N°13611. emitido por el Ministerio del Poder Popular para la Salud.<br>
+6.- Richarson PG et al. New Drugs for Myeloma. 2007. Oncologist 12(6): 664-689.<br>
+7.-Flinn IW, Neuberg DS, Grever MR, et al: Phase III trial of fludarabine plus cyclophosphamide compared with fludarabine
+for patients with previously untreated chronic lymphocytic leukemia: US Intergroup Trial E2997. J Clin Oncol 25:793-798,
+2007.<br>
+8.- SEPI (Bendamustine hydrochloride) powder for concentrate for solution for infusion, EU SPC Mar 2011.<br>
+9.- Wolfgang U. Knauf et al. Bendamustine compared with chlorambucil in previously untreated patients with chronic
+lymphocytic leukaemia: updated results of a randomized phase III trial. British Journal of Haematology, 2012, 159, 67–77</span></div>
+    <div id="an-obj-14"><span><strong>Janssen Cilag, C.A. RIF: J-30042532-0.</strong><br>
+Este material promocional ha sido revisado y aprobado por el Departamento Regulatorio y Dirección Médica de Janssen. / This promotional material has been revised
+and approved by the Regulatory Affairs and Medical Departments from Janssen Venezuela: Janssen Cilag C.A. Rif. J-30042532-0
+Dirección/Adress: Av. Rómulo Gallegos, Edificio Johnson & Johnson, Piso 12, Sector Los Dos Caminos, Caracas, Distrito Capital 58-212-2325122
+Centroamérica y Caribe: Ethnor del Istmo, S.A RUC 4307-162-58368-67 Dirección/Adress: Business Park, Torre Sur, piso 1, Costa del Este, Panamá. 507-3008705.
+Fecha de aprobación/Approval Date: Abril/April 2013- Código/Code RIB-VENCEN0213MM v2</span></div>
+    <div id="an-obj-15"><div><img  height="80" width="159"  src="assets/logojanssen.png"></div></div>
+</div>
+</li>
+
+</ol></div>
+
+</body>
+</html>

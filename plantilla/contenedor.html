@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=800" />
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>contenedor</title>
+
+<script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/acciones.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="js/avatar.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/contenedor.css">
+<link rel="stylesheet" type="text/css" href="css/avatar.css">
+</head>
+<body style="margin:0 auto; height: 100%;">
+<div id="contenedor-an-anim"><ol>
+
+<li id="contenedor-miescena" >
+<div class="contenedor-an-stage">
+<div id="contenedor-an-obj-1"><iframe id="contframe" src="bienvenida.html" width="980" height="465" scrolling="no"></iframe>
+</div>
+
+<!----Imagen ayuda----Imagen ayuda----Imagen ayuda----> 
+    <div id="pantallamenuact">
+    <div class="act1"><img src="assets/a_01.png" onClick="MM_callJS('act1()')"></div><div class="tapact1"></div>
+    <div class="act2"><img src="assets/a_02.png" onClick="MM_callJS('act2()')"></div><div class="tapact2"></div>
+    <div class="act3"><img src="assets/a_03.png" onClick="MM_callJS('act3()')"></div><div class="tapact3"></div>
+    <div class="act4"><img src="assets/a_04.png" onClick="MM_callJS('act4()')"></div><div class="tapact4"></div>
+    </div>
+    
+	<div id="imgayuda"><div id="cierreayuda" onClick="MM_callJS('cierreayuda()')"><img src="assets/cerrarpopup.png"></div><div id="contenidoayuda"><img src="assets/img_ayuda.png"></div></div>
+
+    <div id="contenedor-an-obj-2"><div><img  height="79" width="960"  src="assets/barra_uvirtual.png"></div></div>
+    <div id="contenedor-an-obj-3"><div><img height="91" width="960"  src="assets/barra_tema.png"></div></div>
+<div id="pestanamenu" onClick="MM_callJS('menuslider()')"></div>
+<!----contenido menu----contenido menu----contenido menu---->  
+    <div id="contenidomenu">
+    <div id="btnpresentacionmenu" onClick="MM_callJS('irpresentacion()')"><div class="textobtnmenus">PRESENTACIÓN</div><div class="chulopresentacion"><img src="assets/chulo.png" width="12"></div></div>
+    <div id="btnobjetivosmenu" onClick="MM_callJS('irobjetivos()')"><div class="textobtnmenus">LOGROS</div><div class="chuloobjetivos"><img src="assets/chulo.png" width="12"></div></div>
+    <div id="btncontenidosmenu" onClick="MM_callJS('ircontenidos()')"><div class="textobtnmenus">CONTENIDOS</div><div class="chulocontenidos"><img src="assets/chulo.png" width="12"></div></div>
+    <div id="btnactividades" onClick="MM_callJS('iractividades()')"><div class="textobtnmenus">ACTIVIDADES</div><div class="chuloactivid"><img src="assets/chulo.png" width="12"></div></div>
+    <div id="btnbibliografia" onClick="MM_callJS('irbibliografia()')"><div class="textobtnmenus">BIBLIOGRAFÍA</div><div class="chulobiblio"><img src="assets/chulo.png" width="12"></div></div>
+    <div id="btncierre" onClick="MM_callJS('ircierre()')"><div class="textobtnmenus">CIERRE</div><div class="chulocierre"><img src="assets/chulo.png" width="12"></div></div>
+    <div id="btncreditos" onClick="MM_callJS('ircreditos()')"><div class="textobtnmenus">CRÉDITOS</div><div class="chulocreditos"><img src="assets/chulo.png" width="12"></div></div>
+    <div id="listatemas">
+      <ul id="itemlistamenu">
+        <li onClick="MM_callJS('irtema1()')">Introducción</li><div class="chulotema1"><img src="assets/chulo.png" width="12"></div>
+        <li onClick="MM_callJS('irtema2()')">Página Web</li><div class="chulotema2"><img src="assets/chulo.png" width="12"></div>
+        <li onClick="MM_callJS('irtema3()')">Formato de texto y Caracteres especiales </li><div class="chulotema3"><img src="assets/chulo.png" width="12"></div>
+        <!--<li onClick="MM_callJS('irtema4()')">“Actuar” como resultado controlado</li><div class="chulotema4"><img src="assets/chulo.png" width="12"></div>
+        <li onClick="MM_callJS('irtema5()')">Nombre del tema 5</li>-->
+      </ul>
+    </div>
+    
+    </div>
+    
+    <div id="contenedor-an-obj-5"><div><img  height="91" width="283"  src="assets/barra_unidad_tema.png"></div></div>
+    <div id="contenedor-an-obj-6"><div><img  height="99" width="240"  src="assets/barra_logo.png"></div></div>
+    <div id="contenedor-an-obj-7"><div><img  src="assets/bt_home.png" width="34"  height="33" onClick="MM_callJS('irpresentacion()')"></div></div>
+    <div id="contenedor-an-obj-8"><div><img  src="assets/bt_document.png" width="34"  height="33" onClick="MM_openBrWindow('assets/u1.pdf','','')"></div></div>
+    <div id="contenedor-an-obj-9"><div><img  src="assets/bt_subtitulos.png" width="34"  height="33" onClick="MM_callJS('abrirnotas()')"></div></div>
+    <div id="contenedor-an-obj-10"><div><img  src="assets/bt_ayuda.png" width="34"  height="33" onClick="MM_callJS('abrirayuda()')"></div></div>
+    
+    <div id="contenedor-an-obj-11"><div><img src="assets/bto_atras.png" onClick="MM_callJS('ante()')"></div></div>
+    <div id="contenedor-an-obj-12"></div>
+    <div id="contenedor-an-obj-13"><div><img src="assets/bto_sgt.png" onClick="MM_callJS('sig()')"></div></div>
+    <div id="contenedor-an-obj-14"><div><img  height="16" width="462"  src="assets/barra_progreso.png"></div></div>
+    <div id="contenedor-an-obj-15"><div><img  height="22" width="12"  src="assets/indicador_progreso.png"></div></div>
+    
+<!----Logo----Logo----Logo----Logo----Logo----Logo---->
+    
+    <div id="contenedor-an-obj-16"><img src="assets/logouvirtual.png"></div>
+
+<!----Titulo unidad----Titulo unidad----Titulo unidad----> 
+         
+    <div id="contenedor-an-obj-17"><span id="titulotema">ANIMACIÓN WEB</span></div>
+    <div id="descriptema">Presentación</div>
+    <div id="contenedor-an-obj-18"><span id="titulounidad">UNIDAD 1</span>
+    <span id="titulomateria">Introducción  al lenguaje HTML</span></div>
+    
+<!----puntaje----puntaje----puntaje----puntaje----puntaje---->
+
+	<div id="mostrarpuntos" onClick="MM_callJS('abriruvicons()')" ></div>
+  
+  <div id="pantalla01">
+  	<div id="hombrevsmujer">
+    	<div id="eres"><img src="images2/eres.png"></div>
+    	<div id="hombrebtn"><img src="images2/male_btn.png" onClick="MM_callJS('btnhombre()')"></div>
+    	<div id="mujerbtn"><img src="images2/female_btn.png" onClick="MM_callJS('btnmujer()')"></div>
+    </div>
+    <div id="avatarhom">
+    	<div id="hombresilue"><img src="images2/m_hair00.png"></div>
+        <div id="btnguardaravatar"><img src="images2/bt_terminar.png" onClick="MM_callJS('guardaravatar()')"></div>
+        <div id="botonerahombre">
+        	<div id="intruccionesbtnsavatar"></div>
+        	<div id="botonpeloh1"><img src="images2/bt_m_hair01.png" onClick="MM_callJS('peloh1()')"></div>
+        	<div id="botonpeloh2"><img src="images2/bt_m_hair02.png" onClick="MM_callJS('peloh2()')"></div>
+        	<div id="botonpeloh3"><img src="images2/bt_m_hair03.png" onClick="MM_callJS('peloh3()')"></div>
+        	<div id="botonpeloh4"><img src="images2/bt_m_hair04.png" onClick="MM_callJS('peloh4()')"></div>
+            <div id="botonojoh1"><img src="images2/bt_eyes01.png" onClick="MM_callJS('ojoh1()')"></div>
+        	<div id="botonojoh2"><img src="images2/bt_eyes02.png" onClick="MM_callJS('ojoh2()')"></div>
+        	<div id="botonojoh3"><img src="images2/bt_eyes03.png" onClick="MM_callJS('ojoh3()')"></div>
+        	<div id="botonojoh4"><img src="images2/bt_eyes04.png" onClick="MM_callJS('ojoh4()')"></div>
+            <div id="botonbocah1"><img src="images2/bt_mouth01.png"  onClick="MM_callJS('bocah1()')"></div>
+        	<div id="botonbocah2"><img src="images2/bt_mouth02.png"  onClick="MM_callJS('bocah2()')"></div>
+        	<div id="botonbocah3"><img src="images2/bt_mouth03.png"  onClick="MM_callJS('bocah3()')"></div>
+        	<div id="botonbocah4"><img src="images2/bt_mouth04.png"  onClick="MM_callJS('bocah4()')"></div>
+        </div>
+        <div id="peloh1"><img src="images2/m_hair04.png"></div>
+        <div id="peloh2"><img src="images2/m_hair03.png"></div>
+        <div id="peloh3"><img src="images2/m_hair01.png"></div>
+        <div id="peloh4"><img src="images2/m_hair02.png"></div>
+        
+        <div id="ojosh1"><img src="images2/m_eyes01.png"></div>
+        <div id="ojosh2"><img src="images2/m_eyes02.png"></div>
+        <div id="ojosh3"><img src="images2/m_eyes03.png"></div>
+        <div id="ojosh4"><img src="images2/m_eyes04.png"></div> 
+        
+        <div id="bocah1"><img src="images2/m_mouth01.png"></div>
+        <div id="bocah2"><img src="images2/m_mouth02.png"></div>
+        <div id="bocah3"><img src="images2/m_mouth03.png"></div>
+        <div id="bocah4"><img src="images2/m_mouth04.png"></div>
+    </div>
+    
+    <div id="avatarmuj">
+    	<div id="mujersilue"><img src="images2/hair00.png"></div>
+        <div id="btnguardaravatar"><img src="images2/bt_terminar.png" onClick="MM_callJS('guardaravatar()')"></div>
+        <div id="botoneramujer">
+        	<div id="intruccionesbtnsavatar"></div>
+        	<div id="botonpelom1"><img src="images2/bt_hair00.png" onClick="MM_callJS('pelom1()')"></div>
+        	<div id="botonpelom2"><img src="images2/bt_hair01.png" onClick="MM_callJS('pelom2()')"></div>
+        	<div id="botonpelom3"><img src="images2/bt_hair02.png" onClick="MM_callJS('pelom3()')"></div>
+        	<div id="botonpelom4"><img src="images2/bt_hair03.png" onClick="MM_callJS('pelom4()')"></div>
+            <div id="botonojoh1"><img src="images2/bt_eyes01.png" onClick="MM_callJS('ojom1()')"></div>
+        	<div id="botonojoh2"><img src="images2/bt_eyes02.png" onClick="MM_callJS('ojom2()')"></div>
+        	<div id="botonojoh3"><img src="images2/bt_eyes03.png" onClick="MM_callJS('ojom3()')"></div>
+        	<div id="botonojoh4"><img src="images2/bt_eyes04.png" onClick="MM_callJS('ojom4()')"></div>
+            <div id="botonbocah1"><img src="images2/bt_mouth01.png"  onClick="MM_callJS('bocam1()')"></div>
+        	<div id="botonbocah2"><img src="images2/bt_mouth02.png"  onClick="MM_callJS('bocam2()')"></div>
+        	<div id="botonbocah3"><img src="images2/bt_mouth03.png"  onClick="MM_callJS('bocam3()')"></div>
+        	<div id="botonbocah4"><img src="images2/bt_mouth04.png"  onClick="MM_callJS('bocam4()')"></div>
+        </div>
+        <div id="pelom1"><img src="images2/hair00.png"></div>
+        <div id="pelom2"><img src="images2/hair001.png"></div>
+        <div id="pelom3"><img src="images2/hair002.png"></div>
+        <div id="pelom4"><img src="images2/hair003.png"></div>
+        
+        <div id="ojosm1"><img src="images2/w_eyes01.png"></div>
+        <div id="ojosm2"><img src="images2/w_eyes02.png"></div>
+        <div id="ojosm3"><img src="images2/w_eyes03.png"></div>
+        <div id="ojosm4"><img src="images2/w_eyes04.png"></div> 
+        
+        <div id="bocam1"><img src="images2/m_mouth01.png"></div>
+        <div id="bocam2"><img src="images2/m_mouth02.png"></div>
+        <div id="bocam3"><img src="images2/m_mouth03.png"></div>
+        <div id="bocam4"><img src="images2/m_mouth04.png"></div>
+    </div>
+  </div>
+     
+  <div id="pantalla0">
+  <input type="text" id="texto" placeholder="Tu nombre" maxlength="14">
+  <div id="enviarnombre" onClick="MM_callJS('llenar()')"><img src="assets/entrar_btn.png"></div>
+  </div>
+  
+  <div id="llenar"></div> 
+  <div id="notas"><div id="cerrarnotas" onClick="MM_callJS('cerrarnota()')"><img src="assets/cerrarpopup.png"></div>
+  <!--<input type="email" id="correo">-->
+  <object id="contacto" data="contacto.html" width="310" height="320"></object> 
+  </div>
+  
+  <div id="popuvicons">
+  <div id="cerraruvicons" onClick="MM_callJS('cerraruvicons()')"><img src="assets/cerrarpopup.png"></div>
+  <iframe id="frameuvicons" src="uvitienda.html" frameborder="0" scrolling="no"></iframe>
+  </div>  
+    
+  <div id="minhombre"><img src="images2/template.png" width="30" onClick="MM_callJS('retornoavatar()')"></div>
+  	<div id="minpeloh1"><img src="images2/m_hair04.png" width="21" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minpeloh2"><img src="images2/m_hair03.png" width="21" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minpeloh3"><img src="images2/m_hair01.png" width="21" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minpeloh4"><img src="images2/m_hair02.png" width="21" onClick="MM_callJS('retornoavatar()')"></div>
+        
+    <div id="minojosh1"><img src="images2/m_eyes01.png" width="20" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minojosh2"><img src="images2/m_eyes02.png" width="15" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minojosh3"><img src="images2/m_eyes03.png" width="15" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minojosh4"><img src="images2/m_eyes04.png" width="15" onClick="MM_callJS('retornoavatar()')"></div> 
+        
+    <div id="minbocah1"><img src="images2/m_mouth01.png" width="4" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minbocah2"><img src="images2/m_mouth02.png" width="4" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minbocah3"><img src="images2/m_mouth03.png" width="5" onClick="MM_callJS('retornoavatar()')"></div>
+    <div id="minbocah4"><img src="images2/m_mouth04.png" width="5" onClick="MM_callJS('retornoavatar()')"></div>
+  
+  <div id="minpelom1"><img src="images2/hair00.png" width="27" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minpelom2"><img src="images2/hair001.png" width="27" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minpelom3"><img src="images2/hair002.png" width="27" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minpelom4"><img src="images2/hair003.png" width="27" onClick="MM_callJS('retornoavatar()')"></div>
+  
+  <div id="minojosm1"><img src="images2/w_eyes01.png" width="20" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minojosm2"><img src="images2/w_eyes02.png" width="15" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minojosm3"><img src="images2/w_eyes03.png" width="15" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minojosm4"><img src="images2/w_eyes04.png" width="15" onClick="MM_callJS('retornoavatar()')"></div>
+  
+  <div id="minbocam1"><img src="images2/m_mouth01.png" width="4" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minbocam2"><img src="images2/m_mouth02.png" width="4" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minbocam3"><img src="images2/m_mouth03.png" width="5" onClick="MM_callJS('retornoavatar()')"></div>
+  <div id="minbocam4"><img src="images2/m_mouth04.png" width="5" onClick="MM_callJS('retornoavatar()')"></div>
+   
+</div>
+
+</li>
+
+</ol></div>
+
+</body>
+</html>

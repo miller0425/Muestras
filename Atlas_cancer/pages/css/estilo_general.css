@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+
+#body{
+	background:url(../assets/fondogeneral.png);
+	background-repeat:no-repeat;
+	background-size:auto;
+	}
+	
+#laprostatabtn{
+	position:absolute;
+	background-color:rgba(102,102,102,0);
+	height:30px;
+	width:190px;
+	top:167px;
+	left:0px	
+	}
+#cancerbtn{
+	position:absolute;
+	background-color:rgba(102,102,102,0);
+	height:30px;
+	width:190px;
+	top:240px;
+	left:0px	
+	}
+#estadiosbtn{
+	position:absolute;
+	background-color:rgba(102,102,102,0);
+	height:35px;
+	width:190px;
+	top:276px;
+	left:0px
+	}
+#farmacologicobtn{
+	position:absolute;
+	background-color:rgba(102,102,102,0);
+	height:30px;
+	width:190px;
+	top:360px;
+	left:0px
+	}
+#quirurgicobtn{
+	position:absolute;
+	background-color:rgba(102,102,102,0);
+	height:30px;
+	width:190px;
+	top:395px;
+	left:0px;	
+	}
+#quimiobtn{
+	position:absolute;
+	background-color:rgba(102,102,102,0);
+	height:35px;
+	width:190px;
+	top:437px;
+	left:0px;
+	}
+#hormonoterapiabtn{
+	position:absolute;
+	background-color:rgba(102,102,102,0);
+	height:30px;
+	width:190px;
+	top:480px;
+	left:0px;	
+	}
+
+
+#contframe{
+	position:absolute;
+	top:100px;
+	left:210px;
+	background-color:#FFF;
+	border-radius:8px;
+	border:1px solid #9C3;
+	box-shadow:inset -3px -3px 4px #CCCCCC;
+	}
+
+#pizarra{
+	margin-top:7px;
+	margin-left:202px;
+	display:none;
+	position:absolute;
+	z-index:99;
+	}
+
+#bpizarra{
+	margin-top:555px;
+	margin-left:17px;
+	display:block;
+	position:absolute;
+	z-index:2;
+	}
+	
+#bpizarraOut{
+	margin-top:555px;
+	margin-left:17px;
+	display:none;
+	position:absolute;
+	z-index:2;
+	}
+	
+
+#generalbotones {
+	background-color:rgba(0,255,0,0);
+	position:absolute;
+	left:5px;
+	top:620px;
+	width:550px;
+	height:36px;
+	}
+	
+
+#contenbotones {
+	position: absolute;
+	left: 20px;
+	top: 80px;
+	height:265px;
+	width:175px;
+}
+
+
+#btnreferencias {
+	color:#FFF;
+	position:absolute;
+	top:740px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	}
+
+/**********************marcadores********************************/	
+#marcador1 {
+	background-image: url(../img/marcador.png);
+	z-index:0;
+	width:20px;
+	height:23px;
+	top: 171px;
+	left:170px;
+	position:absolute;
+	display:none;
+}
+
+#marcador2{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:20px;
+	height:23px;
+	top: 245px;
+	left:170px;
+	position:absolute;
+	display:none;
+}
+#marcador3{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:20px;
+	height:23px;
+	top: 284px;
+	left:170px;
+	position:absolute;
+	display:none;
+}
+
+#marcador4{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:20px;
+	height:23px;
+	top: 365px;
+	left:170px;
+	position:absolute;
+	display:none;
+}
+
+#marcador5{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:20px;
+	height:23px;
+	top: 398px;
+	left:170px;
+	position:absolute;
+	display:none;
+}
+
+#marcador6{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:20px;
+	height:23px;
+	top: 447px;
+	left:170px;
+	position:absolute;
+	display:none;
+}
+
+#marcador7{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:20px;
+	height:23px;
+	top: 485px;
+	left:170px;
+	position:absolute;
+	display:none;
+}
+
+#marcador8{
+	background-image:url(../img/marcador.png);
+	z-index:0;
+	width:20px;
+	height:23px;
+	top: 527px;
+	left:170px;
+	position:absolute;
+	display:none;
+}
+
+

@@ -1,0 +1,1155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>actividad</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+
+<style type="text/css">
+body {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	font-size:18px;
+	}
+
+#conten {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+
+#fondoact {
+	position:absolute;
+	top:0;
+	left:0;
+	}
+
+#equiz {
+	position: absolute;
+	top: 73px;
+	left: 869px;
+	display:none;
+	}
+
+#gano {
+	position: absolute;
+	
+	width:960px;
+	height:465px;
+	top: 0px;
+	left: 0px;
+	display:none;
+	}
+#imgfeliz {
+	position:relative;
+	width:auto;
+	margin:0;
+	}
+p {
+	color:rgba(255,255,255,1.00);
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align:center;
+	margin-top:-8px;
+	cursor:pointer;	
+	}
+#conten1 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:block;
+	}
+#fondoact2 {
+	position:absolute;
+	top:0;
+	left:0;
+	}
+#btn1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0.00);
+	cursor: pointer;
+	}
+#btn2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0.00);
+	cursor: pointer;
+	}
+#btn3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0.00);
+	cursor: pointer;
+	}
+#btn4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0.00);
+	cursor: pointer;
+	}
+#conterespuestas {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal1 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn1 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+#conten2 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn2_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn2_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn2_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn2_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas2 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal2 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn2 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+	
+#conten3 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn3_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn3_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn3_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn3_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas3 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal3 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn3 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+	
+#conten4 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn4_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn4_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn4_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn4_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas4 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal4 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn4 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+#conten5 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn5_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn5_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn5_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn5_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas5 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal5 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn5 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+#conten6 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn6_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn6_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn6_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn6_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas6 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal6 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn6 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+#conten7 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn7_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn7_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn7_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn7_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas7 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal7 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn7 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+#conten8 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn8_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn8_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn8_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn8_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas8 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal8 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn8 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+#conten9 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn9_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn9_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn9_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn9_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas9 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal9 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn9 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+#conten10 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+#btn10_1 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 243px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn10_2 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 275px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn10_3 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 303px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#btn10_4 {
+	width: 523px;
+	height: 23px;
+	position: absolute;
+	top: 334px;
+	left: 210px;
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	}
+#conterespuestas10 {
+	width: 960px;
+	height: 465px;
+	top:0;
+	left:0;
+	position:absolute;
+	display:none;
+	background:rgba(0,0,0,0.66);
+	}
+#mal10 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;	
+	}
+#bn10 {
+	width: 960px;
+	height: 465px;
+	position: absolute;
+	left: 25%;
+	top: 25%;
+	display:none;
+	}
+</style>
+
+<script>
+
+	
+	function recargar(){
+		document.location.href = document.location.href;
+		}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+
+function irbtn1() {
+	$("#conterespuestas").fadeIn('slow');
+	$("#bn1").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas").fadeOut('slow'); $("#bn1").fadeOut('fast'); $("#conten1").fadeOut('fast'); $("#conten2").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn2() {
+	$("#conterespuestas").fadeIn('slow');
+	$("#mal1").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas").fadeOut('slow'); $("#mal1").fadeOut('fast'); }, 2000);
+	}
+function irbtn3() {
+	$("#conterespuestas").fadeIn('slow');
+	$("#mal1").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas").fadeOut('slow'); $("#mal1").fadeOut('fast'); }, 2000);
+	}
+function irbtn4() {
+	$("#conterespuestas").fadeIn('slow');
+	$("#mal1").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas").fadeOut('slow'); $("#mal1").fadeOut('fast'); }, 2000);
+	}
+
+function irbtn2_1() {
+	$("#conterespuestas2").fadeIn('slow');
+	$("#mal2").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas2").fadeOut('slow'); $("#mal2").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn2_2() {
+	$("#conterespuestas2").fadeIn('slow');
+	$("#mal2").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas2").fadeOut('slow'); $("#mal2").fadeOut('fast'); }, 2000);
+	}
+function irbtn2_3() {
+	$("#conterespuestas2").fadeIn('slow');
+	$("#bn2").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas2").fadeOut('slow'); $("#bn2").fadeOut('fast'); $("#conten2").fadeOut('fast'); $("#conten3").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn2_4() {
+	$("#conterespuestas2").fadeIn('slow');
+	$("#mal2").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas2").fadeOut('slow'); $("#mal2").fadeOut('fast'); }, 2000);
+	}
+	
+function irbtn3_1() {
+	$("#conterespuestas3").fadeIn('slow');
+	$("#mal3").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas3").fadeOut('slow'); $("#mal3").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn3_2() {
+	$("#conterespuestas3").fadeIn('slow');
+	$("#bn3").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas3").fadeOut('slow'); $("#bn3").fadeOut('fast'); $("#conten3").fadeOut('fast'); $("#conten4").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn3_3() {
+	$("#conterespuestas3").fadeIn('slow');
+	$("#mal3").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas3").fadeOut('slow'); $("#mal3").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn3_4() {
+	$("#conterespuestas3").fadeIn('slow');
+	$("#mal3").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas3").fadeOut('slow'); $("#mal3").fadeOut('fast'); }, 2000);
+	}
+	
+function irbtn4_1() {
+	$("#conterespuestas4").fadeIn('slow');
+	$("#mal4").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas4").fadeOut('slow'); $("#mal4").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn4_2() {
+	$("#conterespuestas4").fadeIn('slow');
+	$("#bn4").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas4").fadeOut('slow'); $("#bn4").fadeOut('fast'); $("#conten4").fadeOut('fast'); $("#conten5").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn4_3() {
+	$("#conterespuestas4").fadeIn('slow');
+	$("#mal4").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas4").fadeOut('slow'); $("#mal4").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn4_4() {
+	$("#conterespuestas4").fadeIn('slow');
+	$("#mal4").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas4").fadeOut('slow'); $("#mal4").fadeOut('fast'); }, 2000);
+	}
+	
+function irbtn5_1() {
+	$("#conterespuestas5").fadeIn('slow');
+	$("#mal5").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas5").fadeOut('slow'); $("#mal5").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn5_2() {
+	$("#conterespuestas5").fadeIn('slow');
+	$("#mal5").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas5").fadeOut('slow'); $("#mal5").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn5_3() {
+	$("#conterespuestas5").fadeIn('slow');
+	$("#bn5").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas5").fadeOut('slow'); $("#bn5").fadeOut('fast'); $("#conten5").fadeOut('fast'); $("#conten6").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn5_4() {
+	$("#conterespuestas5").fadeIn('slow');
+	$("#mal5").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas5").fadeOut('slow'); $("#mal5").fadeOut('fast'); }, 2000);
+	}
+	
+function irbtn6_1() {
+	$("#conterespuestas6").fadeIn('slow');
+	$("#bn6").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas6").fadeOut('slow'); $("#bn6").fadeOut('fast'); $("#conten6").fadeOut('fast'); $("#conten7").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn6_2() {
+	$("#conterespuestas6").fadeIn('slow');
+	$("#mal6").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas6").fadeOut('slow'); $("#mal6").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn6_3() {
+	$("#conterespuestas6").fadeIn('slow');
+	$("#mal6").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas6").fadeOut('slow'); $("#mal6").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn6_4() {
+	$("#conterespuestas6").fadeIn('slow');
+	$("#mal6").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas6").fadeOut('slow'); $("#mal6").fadeOut('fast'); }, 2000);
+	}
+	
+function irbtn7_1() {
+	$("#conterespuestas7").fadeIn('slow');
+	$("#bn7").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas7").fadeOut('slow'); $("#bn7").fadeOut('fast'); $("#conten7").fadeOut('fast'); $("#conten8").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn7_2() {
+	$("#conterespuestas7").fadeIn('slow');
+	$("#mal7").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas7").fadeOut('slow'); $("#mal7").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn7_3() {
+	$("#conterespuestas7").fadeIn('slow');
+	$("#mal7").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas7").fadeOut('slow'); $("#mal7").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn7_4() {
+	$("#conterespuestas7").fadeIn('slow');
+	$("#mal7").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas7").fadeOut('slow'); $("#mal7").fadeOut('fast'); }, 2000);
+	}
+	
+function irbtn8_1() {
+	$("#conterespuestas8").fadeIn('slow');
+	$("#bn8").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas8").fadeOut('slow'); $("#bn8").fadeOut('fast'); $("#conten8").fadeOut('fast'); $("#conten9").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn8_2() {
+	$("#conterespuestas8").fadeIn('slow');
+	$("#mal8").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas8").fadeOut('slow'); $("#mal8").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn8_3() {
+	$("#conterespuestas8").fadeIn('slow');
+	$("#mal8").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas8").fadeOut('slow'); $("#mal8").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn8_4() {
+	$("#conterespuestas8").fadeIn('slow');
+	$("#mal8").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas8").fadeOut('slow'); $("#mal8").fadeOut('fast'); }, 2000);
+	}
+	
+function irbtn9_1() {
+	$("#conterespuestas9").fadeIn('slow');
+	$("#mal9").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas9").fadeOut('slow'); $("#mal9").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn9_2() {
+	$("#conterespuestas9").fadeIn('slow');
+	$("#mal9").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas9").fadeOut('slow'); $("#mal9").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn9_3() {
+	$("#conterespuestas9").fadeIn('slow');
+	$("#bn9").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas9").fadeOut('slow'); $("#bn9").fadeOut('fast'); $("#conten9").fadeOut('fast'); $("#conten10").fadeIn('fast');}, 2000);
+	
+	}
+function irbtn9_4() {
+	$("#conterespuestas9").fadeIn('slow');
+	$("#mal9").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas9").fadeOut('slow'); $("#mal9").fadeOut('fast'); }, 2000);
+	}
+function irbtn10_1() {
+	$("#conterespuestas10").fadeIn('slow');
+	$("#bn10").fadeIn('slow');
+	
+	}
+function irbtn10_2() {
+	$("#conterespuestas10").fadeIn('slow');
+	$("#mal10").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas10").fadeOut('slow'); $("#mal10").fadeOut('fast'); }, 2000);
+	
+	}
+function irbtn10_3() {
+	$("#conterespuestas10").fadeIn('slow');
+	$("#mal10").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas10").fadeOut('slow'); $("#mal10").fadeOut('fast'); }, 2000);
+			
+	}
+function irbtn10_4() {
+	$("#conterespuestas10").fadeIn('slow');
+	$("#mal10").fadeIn('slow');
+	setTimeout(function(){ $("#conterespuestas10").fadeOut('slow'); $("#mal10").fadeOut('fast'); }, 2000);
+	}
+
+</script>
+	
+</head>
+
+<body>
+
+<div id="conten1">
+<div id="fondoact2"><img src="images/actividad_1.jpg"></div>
+<div id="btn1" onClick="MM_callJS('irbtn1()')"></div>
+<div id="btn2" onClick="MM_callJS('irbtn2()')"></div>
+<div id="btn3" onClick="MM_callJS('irbtn3()')"></div>
+<div id="btn4" onClick="MM_callJS('irbtn4()')"></div>
+
+<div id="conterespuestas">
+<div id="mal1"><img src="images/mal1.png"></div>
+<div id="bn1"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten2">
+<div id="fondoact2"><img src="images/actividad_2.jpg"></div>
+<div id="btn2_1" onClick="MM_callJS('irbtn2_1()')"></div>
+<div id="btn2_2" onClick="MM_callJS('irbtn2_2()')"></div>
+<div id="btn2_3" onClick="MM_callJS('irbtn2_3()')"></div>
+<div id="btn2_4" onClick="MM_callJS('irbtn2_4()')"></div>
+
+<div id="conterespuestas2">
+<div id="mal2"><img src="images/mal1.png"></div>
+<div id="bn2"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten3">
+<div id="fondoact2"><img src="images/actividad_3.jpg"></div>
+<div id="btn3_1" onClick="MM_callJS('irbtn3_1()')"></div>
+<div id="btn3_2" onClick="MM_callJS('irbtn3_2()')"></div>
+<div id="btn3_3" onClick="MM_callJS('irbtn3_3()')"></div>
+<div id="btn3_4" onClick="MM_callJS('irbtn3_4()')"></div>
+
+<div id="conterespuestas3">
+<div id="mal3"><img src="images/mal1.png"></div>
+<div id="bn3"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten4">
+<div id="fondoact2"><img src="images/actividad_4.jpg"></div>
+<div id="btn4_1" onClick="MM_callJS('irbtn4_1()')"></div>
+<div id="btn4_2" onClick="MM_callJS('irbtn4_2()')"></div>
+<div id="btn4_3" onClick="MM_callJS('irbtn4_3()')"></div>
+<div id="btn4_4" onClick="MM_callJS('irbtn4_4()')"></div>
+
+<div id="conterespuestas4">
+<div id="mal4"><img src="images/mal1.png"></div>
+<div id="bn4"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten5">
+<div id="fondoact2"><img src="images/actividad_5.jpg"></div>
+<div id="btn5_1" onClick="MM_callJS('irbtn5_1()')"></div>
+<div id="btn5_2" onClick="MM_callJS('irbtn5_2()')"></div>
+<div id="btn5_3" onClick="MM_callJS('irbtn5_3()')"></div>
+<div id="btn5_4" onClick="MM_callJS('irbtn5_4()')"></div>
+
+<div id="conterespuestas5">
+<div id="mal5"><img src="images/mal1.png"></div>
+<div id="bn5"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten6">
+<div id="fondoact2"><img src="images/actividad_6.jpg"></div>
+<div id="btn6_1" onClick="MM_callJS('irbtn6_1()')"></div>
+<div id="btn6_2" onClick="MM_callJS('irbtn6_2()')"></div>
+<div id="btn6_3" onClick="MM_callJS('irbtn6_3()')"></div>
+<div id="btn6_4" onClick="MM_callJS('irbtn6_4()')"></div>
+
+<div id="conterespuestas6">
+<div id="mal6"><img src="images/mal1.png"></div>
+<div id="bn6"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten7">
+<div id="fondoact2"><img src="images/actividad_7.jpg"></div>
+<div id="btn7_1" onClick="MM_callJS('irbtn7_1()')"></div>
+<div id="btn7_2" onClick="MM_callJS('irbtn7_2()')"></div>
+<div id="btn7_3" onClick="MM_callJS('irbtn7_3()')"></div>
+<div id="btn7_4" onClick="MM_callJS('irbtn7_4()')"></div>
+
+<div id="conterespuestas7">
+<div id="mal7"><img src="images/mal1.png"></div>
+<div id="bn7"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten8">
+<div id="fondoact2"><img src="images/actividad_8.jpg"></div>
+<div id="btn8_1" onClick="MM_callJS('irbtn8_1()')"></div>
+<div id="btn8_2" onClick="MM_callJS('irbtn8_2()')"></div>
+<div id="btn8_3" onClick="MM_callJS('irbtn8_3()')"></div>
+<div id="btn8_4" onClick="MM_callJS('irbtn8_4()')"></div>
+
+<div id="conterespuestas8">
+<div id="mal8"><img src="images/mal1.png"></div>
+<div id="bn8"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten9">
+<div id="fondoact2"><img src="images/actividad_9.jpg"></div>
+<div id="btn9_1" onClick="MM_callJS('irbtn9_1()')"></div>
+<div id="btn9_2" onClick="MM_callJS('irbtn9_2()')"></div>
+<div id="btn9_3" onClick="MM_callJS('irbtn9_3()')"></div>
+<div id="btn9_4" onClick="MM_callJS('irbtn9_4()')"></div>
+
+<div id="conterespuestas9">
+<div id="mal9"><img src="images/mal1.png"></div>
+<div id="bn9"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+<div id="conten10">
+<div id="fondoact2"><img src="images/actividad_10.jpg"></div>
+<div id="btn10_1" onClick="MM_callJS('irbtn10_1()')"></div>
+<div id="btn10_2" onClick="MM_callJS('irbtn10_2()')"></div>
+<div id="btn10_3" onClick="MM_callJS('irbtn10_3()')"></div>
+<div id="btn10_4" onClick="MM_callJS('irbtn10_4()')"></div>
+
+<div id="conterespuestas10">
+<div id="mal10"><img src="images/mal1.png"></div>
+<div id="bn10"><img src="images/bn1.png"></div>
+</div>
+</div>
+
+</body>
+</html>

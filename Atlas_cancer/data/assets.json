@@ -1,0 +1,54 @@
+{
+"presentation": {
+    "settings": {
+        "topNavTouchZone": {
+            "x":0,
+            "y":0,
+            "width":75,
+            "height":35
+        },
+        "usesBottomNav":"false",
+        "scrolling":"true",
+        "zooming":"true",
+        "bottomNavTouchZone": {
+            "x":0,
+            "y":713,
+            "width":75,
+            "height":35
+        }
+    
+    },
+	"assets": [
+        {
+          "label": "Home",
+          "thumbnail": "./assets/section1.png",
+          "anchorPath": "./index.html",
+          "type": "html"
+        },
+		{
+          "label": "page2",
+          "thumbnail": "./assets/section2.png",
+          "anchorPath": "./pages/pag2.html",
+          "type": "html"
+        },
+		{
+          "label": "page3",
+          "thumbnail": "./assets/section3.png",
+          "anchorPath": "./pages/pag3.html",
+          "type": "html"
+        },
+		{
+          "label": "page4",
+          "thumbnail": "./assets/section4.png",
+          "anchorPath": "./pages/pag4.html",
+          "type": "html"
+        },
+		{
+          "label": "page5",
+          "thumbnail": "./assets/section5.png",
+          "anchorPath": "./pages/pag5.html",
+          "type": "html"
+        }
+     ]
+  }
+}

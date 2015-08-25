@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pag11</title>
+
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.min.js"></script>
+
+<link href="estilo.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+function mostrar(){
+  $("#mostrador2").toggleClass("clasetwo", 1000, function(){
+	  /*-$("#cuadrogrande").fadeOut('slow');*/
+	  } );
+}
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+function mostrar1() {
+	$("#muestra1").toggle( "shake", 1000 );
+	}
+function mostrar2() {
+	$("#muestra2").fadeIn('fast');
+	$("#muestra3").fadeOut('fast');
+	$("#muestra4").fadeOut('fast');
+	}
+function mostrar3() {
+	$("#muestra3").fadeIn('fast');
+	$("#muestra2").fadeOut('fast');
+	$("#muestra4").fadeOut('fast');
+	}
+function mostrar4() {
+	$("#muestra4").fadeIn('fast');
+	$("#muestra2").fadeOut('fast');
+	$("#muestra3").fadeOut('fast');
+	}
+</script>
+
+</head>
+
+<body>
+
+<div id="cont">
+<div id="caja">
+
+<div id="mostrador1">
+<div id="btnhome"><img src="../assets/homebtn.png" width="50" onClick="MM_goToURL('parent','../4/index.html');return document.MM_returnValue"></div>
+<div id="btncerrar"><img src="../assets/cerrarbtn.png" width="50" onClick="MM_goToURL('parent','../6/index.html');return document.MM_returnValue"></div>
+<div id="logouvi"><img src="../assets/logo_color.png"></div>
+<div id="logopixo"><img src="../assets/logo_pixo.png"></div>
+<div id="titulo"><img src="../assets/img62.png"></div>
+<div id="texto"><img src="../assets/img63.png"></div>
+<div id="btntoogle" onClick="MM_callJS('mostrar()')"></div>
+</div>
+
+<div id="mostrador2" class="claseone">
+<div id="cuadrogrande"><img src="../assets/img65.png"></div>
+<div id="perso"><img src="../assets/img67.png"></div>
+<div id="uno"><img src="../assets/img68.png"></div>
+<div id="texto2"><img src="../assets/img69.png"></div>
+<div id="texto3"><img src="../assets/img70.png"></div>
+<div id="muestra1"><img src="../assets/img72.png"></div>
+<div id="boton1"><img src="../assets/img71.png" onClick="MM_callJS('mostrar1()')"></div>
+<div id="boton2"><img src="../assets/img73.png" onClick="MM_callJS('mostrar2()')"></div>
+<div id="muestra2"><img src="../assets/img77.png"></div>
+<div id="boton3"><img src="../assets/img74.png" onClick="MM_callJS('mostrar3()')"></div>
+<div id="muestra3"><img src="../assets/img76.png"></div>
+<div id="boton4"><img src="../assets/img75.png" onClick="MM_callJS('mostrar4()')"></div>
+<div id="muestra4"><img src="../assets/img78.png"></div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

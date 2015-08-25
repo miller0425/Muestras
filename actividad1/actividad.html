@@ -1,0 +1,785 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>actividad</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+
+
+<style type="text/css">
+body {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	font-size:18px;
+	}
+
+#conten {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:block;
+	}
+
+#fondoact {
+	position:absolute;
+	top:0;
+	left:0;
+	}
+
+#droppable {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 72px;
+	height: 42px;
+	left: 484px;
+	top: 173px;
+	display: block;
+	}
+#droppable2 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 138px;
+	height: 44px;
+	left: 558px;
+	top: 172px;
+	display: block;
+	}
+#droppable3 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 71px;
+	height: 44px;
+	left: 697px;
+	top: 172px;
+	display: block;
+	}
+#droppable4 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 71px;
+	height: 53px;
+	left: 484px;
+	top: 217px;
+	display: block;
+	}
+#droppable5 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 139px;
+	height: 53px;
+	left: 557px;
+	top: 216px;
+	display: block;
+	}
+#droppable6 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 71px;
+	height: 53px;
+	left: 769px;
+	top: 218px;
+	display: block;
+	}
+
+#draggable {
+	position: absolute;
+	cursor: pointer;
+	left: 114px;
+	top: 231px;
+	display: block;
+ }
+#draggable2
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 238px;
+	top: 281px;
+	cursor: pointer;
+	display: block;
+ }
+#draggable3
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 102px;
+	top: 340px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable4
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 237px;
+	top: 243px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable5
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 242px;
+	top: 336px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable6
+{
+	width: 121px;
+	height: 45px;
+	position: absolute;
+	left: 82px;
+	top: 276px;
+	cursor: pointer;
+	display: block;
+ }
+#sigbtn1 {
+	position: absolute;
+	left: 808px;
+	top: 415px;
+	display:none;
+	}
+
+#feliz {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display:none;
+	}
+
+#conten2 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+
+#fondoact2 {
+	position:absolute;
+	top:0;
+	left:0;
+	}
+
+#droppable2_1 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 71px;
+	height: 45px;
+	left: 485px;
+	top: 171px;
+	display: block;
+	}
+#droppable2_2 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 140px;
+	height: 44px;
+	left: 557px;
+	top: 172px;
+	display: block;
+	}
+#droppable2_3 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 71px;
+	height: 45px;
+	left: 698px;
+	top: 171px;
+	display: block;
+	}
+#droppable2_4 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 70px;
+	height: 52px;
+	left: 485px;
+	top: 218px;
+	display: block;
+	}
+#droppable2_5 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 140px;
+	height: 52px;
+	left: 557px;
+	top: 218px;
+	display: block;
+	}
+#droppable2_6 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 70px;
+	height: 52px;
+	left: 769px;
+	top: 217px;
+	display: block;
+	}
+#draggable2_1 {
+	position: absolute;
+	cursor: pointer;
+	left: 98px;
+	top: 168px;
+	display: block;
+ }
+#draggable2_2
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 241px;
+	top: 271px;
+	cursor: pointer;
+	display: block;
+ }
+#draggable2_3
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 236px;
+	top: 215px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable2_4
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 107px;
+	top: 226px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable2_5
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 247px;
+	top: 166px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable2_6
+{
+	width: 70px;
+	height: 23px;
+	position: absolute;
+	left: 92px;
+	top: 286px;
+	cursor: pointer;
+	display: block;
+ }
+ #sigbtn2 {
+	position: absolute;
+	left: 808px;
+	top: 415px;
+	display:none;
+	}
+
+#feliz2 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display:none;
+	}
+	
+#conten3 {
+	width:960px;
+	height:465px;
+	background:rgba(255,255,255,1.00);
+	padding:0;
+	margin:0;
+	overflow:hidden !important;
+	display:none;
+	}
+
+#fondoact3 {
+	position:absolute;
+	top:0;
+	left:0;
+	}
+
+#droppable3_1 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 71px;
+	height: 46px;
+	left: 485px;
+	top: 171px;
+	display: block;
+	}
+#droppable3_2 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 140px;
+	height: 44px;
+	left: 557px;
+	top: 172px;
+	display: block;
+	}
+#droppable3_3 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 71px;
+	height: 45px;
+	left: 698px;
+	top: 171px;
+	display: block;
+	}
+#droppable3_4 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 70px;
+	height: 52px;
+	left: 485px;
+	top: 219px;
+	display: block;
+	}
+#droppable3_5 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 142px;
+	height: 52px;
+	left: 555px;
+	top: 218px;
+	display: block;
+	}
+#droppable3_6 {
+	position: absolute;
+	background: rgba(0,0,0,0);
+	width: 70px;
+	height: 52px;
+	left: 768px;
+	top: 217px;
+	display: block;
+	}
+#draggable3_1 {
+	position: absolute;
+	cursor: pointer;
+	left: 98px;
+	top: 168px;
+	display: block;
+ }
+#draggable3_2
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 241px;
+	top: 271px;
+	cursor: pointer;
+	display: block;
+ }
+#draggable3_3
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 236px;
+	top: 215px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable3_4
+{
+	width: 50px;
+	height: 15px;
+	position: absolute;
+	left: 97px;
+	top: 226px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable3_5
+{
+	width: 70px;
+	height: 23px;
+	position: absolute;
+	left: 235px;
+	top: 165px;
+	cursor: pointer;
+	display: block;
+ }
+ #draggable3_6
+{
+	width: 70px;
+	height: 23px;
+	position: absolute;
+	left: 92px;
+	top: 286px;
+	cursor: pointer;
+	display: block;
+ }
+#feliz3 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display:none;
+	}
+</style>
+
+<script>
+$(function() {
+		var punto=0;
+		$( "#draggable" ).draggable({ revert: "invalid" });
+		$( "#draggable2" ).draggable({ revert: "invalid" });
+		$( "#draggable3" ).draggable({ revert: "invalid" });
+		$( "#draggable4" ).draggable({ revert: "invalid" });
+		$( "#draggable5" ).draggable({ revert: "invalid" });
+		$( "#draggable6" ).draggable({ revert: "invalid" });
+		
+		$( "#draggable2_1" ).draggable({ revert: "invalid" });
+		$( "#draggable2_2" ).draggable({ revert: "invalid" });
+		$( "#draggable2_3" ).draggable({ revert: "invalid" });
+		$( "#draggable2_4" ).draggable({ revert: "invalid" });
+		$( "#draggable2_5" ).draggable({ revert: "invalid" });
+		$( "#draggable2_6" ).draggable({ revert: "invalid" });
+		
+		$( "#draggable3_1" ).draggable({ revert: "invalid" });
+		$( "#draggable3_2" ).draggable({ revert: "invalid" });
+		$( "#draggable3_3" ).draggable({ revert: "invalid" });
+		$( "#draggable3_4" ).draggable({ revert: "invalid" });
+		$( "#draggable3_5" ).draggable({ revert: "invalid" });
+		$( "#draggable3_6" ).draggable({ revert: "invalid" });
+		
+		$( "#droppable" ).droppable({
+			accept: "#draggable",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==6){
+					$("#sigbtn1").fadeIn('slow');
+					$("#feliz").fadeIn('slow');
+					setTimeout('$("#feliz").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+		
+		$( "#droppable2" ).droppable({
+			accept: "#draggable5",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==6){
+					$("#sigbtn1").fadeIn('slow');
+					$("#feliz").fadeIn('slow');
+					setTimeout('$("#feliz").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');				
+				}
+			})
+		$( "#droppable3" ).droppable({
+			accept: "#draggable4, #draggable3",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==6){
+					$("#sigbtn1").fadeIn('slow');
+					$("#feliz").fadeIn('slow');
+					setTimeout('$("#feliz").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable4" ).droppable({
+			accept: "#draggable2",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==6){
+					$("#sigbtn1").fadeIn('slow');
+					$("#feliz").fadeIn('slow');
+					setTimeout('$("#feliz").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+			
+			$( "#droppable5" ).droppable({
+			accept: "#draggable6",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==6){
+					$("#sigbtn1").fadeIn('slow');
+					$("#feliz").fadeIn('slow');
+					setTimeout('$("#feliz").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+			
+			$( "#droppable6" ).droppable({
+			accept: "#draggable3, #draggable4",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==6){
+					$("#sigbtn1").fadeIn('slow');
+					$("#feliz").fadeIn('slow');
+					setTimeout('$("#feliz").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+			
+
+		$( "#droppable2_1" ).droppable({
+			accept: "#draggable2_5",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==12){
+					$("#sigbtn2").fadeIn('slow');
+					$("#feliz2").fadeIn('slow');
+					setTimeout('$("#feliz2").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable2_2" ).droppable({
+			accept: "#draggable2_2",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==12){
+					$("#sigbtn2").fadeIn('slow');
+					$("#feliz2").fadeIn('slow');
+					setTimeout('$("#feliz2").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable2_3" ).droppable({
+			accept: "#draggable2_1, #draggable2_6",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==12){
+					$("#sigbtn2").fadeIn('slow');
+					$("#feliz2").fadeIn('slow');
+					setTimeout('$("#feliz2").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable2_4" ).droppable({
+			accept: "#draggable2_3",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==12){
+					$("#sigbtn2").fadeIn('slow');
+					$("#feliz2").fadeIn('slow');
+					setTimeout('$("#feliz2").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable2_5" ).droppable({
+			accept: "#draggable2_4",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==12){
+					$("#sigbtn2").fadeIn('slow');
+					$("#feliz2").fadeIn('slow');
+					setTimeout('$("#feliz2").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable2_6" ).droppable({
+			accept: "#draggable2_6, #draggable2_1",
+			deactivate: function( event, ui ) {
+				},
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==12){
+					$("#sigbtn2").fadeIn('slow');
+					$("#feliz2").fadeIn('slow');
+					setTimeout('$("#feliz2").fadeOut("slow")', 4000);
+				}
+				$(this).draggable('disable');
+				}
+			})
+			
+		$( "#droppable3_1" ).droppable({
+			accept: "#draggable3_4",
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==18){
+					$("#feliz3").fadeIn('slow');
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable3_2" ).droppable({
+			accept: "#draggable3_1",
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==18){
+					$("#feliz3").fadeIn('slow');
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable3_3" ).droppable({
+			accept: "#draggable3_5, #draggable3_6",
+			drop: function( event, ui ) {
+				ui.draggable.position( { of: $(this), my: 'center center',at: 'center center' } );
+				punto = punto+1;
+				if(punto==18){
+					$("#feliz3").fadeIn('slow');
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable3_4" ).droppable({
+			accept: "#draggable3_3",
+			drop: function( event, ui ) {
+				punto = punto+1;
+				if(punto==18){
+					$("#feliz3").fadeIn('slow');
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable3_5" ).droppable({
+			accept: "#draggable3_2",
+			drop: function( event, ui ) {
+				punto = punto+1;
+				if(punto==18){
+					$("#feliz3").fadeIn('slow');
+				}
+				$(this).draggable('disable');
+				}
+			})
+		$( "#droppable3_6" ).droppable({
+			accept: "#draggable3_6, #draggable3_5",
+			drop: function( event, ui ) {
+				punto = punto+1;
+				if(punto==18){
+					$("#feliz3").fadeIn('slow');
+				}
+				$(this).draggable('disable');
+				}
+			})
+		
+	});
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+function btnsig1(){
+	$("#conten").fadeOut('slow');
+	$("#conten2").fadeIn('slow');
+	}
+function btnsig2(){
+	$("#conten2").fadeOut('slow');
+	$("#conten3").fadeIn('slow');
+	}
+</script>
+	
+</head>
+
+<body>
+<div id="conten">
+<div id="fondoact"><img src="images/actividad.jpg"></div>
+<div id="droppable"></div>
+<div id="droppable2"></div>
+<div id="droppable3"></div>
+<div id="droppable4"></div>
+<div id="droppable5"></div>
+<div id="droppable6"></div>
+
+<div id="draggable"><img src="images/act1_1.png"></div>
+<div id="draggable2"><img src="images/act1_2.png"></div>
+<div id="draggable3"><img src="images/act1_3.png"></div>
+<div id="draggable4"><img src="images/act1_3.png"></div>
+<div id="draggable5"><img src="images/act1_5.png"></div>
+<div id="draggable6"><img src="images/act1_6.png"></div>
+
+<div id="sigbtn1"><img src="images/btnsigact.png" onClick="MM_callJS('btnsig1()')"></div>
+<div id="feliz"><img src="images/felicitaciones2.png"></div>
+</div>
+
+<div id="conten2">
+<div id="fondoact2"><img src="images/actividad2.jpg"></div>
+<div id="droppable2_1"></div>
+<div id="droppable2_2"></div>
+<div id="droppable2_3"></div>
+<div id="droppable2_4"></div>
+<div id="droppable2_5"></div>
+<div id="droppable2_6"></div>
+<div id="draggable2_1"><img src="images/act2_1.png"></div>
+<div id="draggable2_2"><img src="images/act2_2.png"></div>
+<div id="draggable2_3"><img src="images/act2_3.png"></div>
+<div id="draggable2_4"><img src="images/act1_5.png"></div>
+<div id="draggable2_5"><img src="images/act1_1.png"></div>
+<div id="draggable2_6"><img src="images/act2_1.png"></div>
+<div id="sigbtn2"><img src="images/btnsigact.png" onClick="MM_callJS('btnsig2()')"></div>
+<div id="feliz2"><img src="images/felicitaciones2.png"></div>
+</div>
+
+<div id="conten3">
+<div id="fondoact3"><img src="images/actividad3.jpg"></div>
+<div id="droppable3_1"></div>
+<div id="droppable3_2"></div>
+<div id="droppable3_3"></div>
+<div id="droppable3_4"></div>
+<div id="droppable3_5"></div>
+<div id="droppable3_6"></div>
+<div id="draggable3_1"><img src="images/act3_1.png"></div>
+<div id="draggable3_2"><img src="images/act2_2.png"></div>
+<div id="draggable3_3"><img src="images/act2_3.png"></div>
+<div id="draggable3_4"><img src="images/act3_2.png"></div>
+<div id="draggable3_5"><img src="images/act3_3.png"></div>
+<div id="draggable3_6"><img src="images/act3_3.png"></div>
+<div id="feliz3"><img src="images/felicitaciones.png"></div>
+</div>
+
+</body>
+</html>
