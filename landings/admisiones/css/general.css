@@ -1,0 +1,299 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background:rgba(166,166,166,1.00);
+	padding:0;
+	margin:0;
+	}
+	
+#Gran_cont {
+	position:relative;
+	width:1200px;
+	height:2600px;
+	background:rgba(166,166,166,1.00);
+	margin:0 auto;
+	}
+
+#primero {
+	position:absolute;
+	width:100%;
+	height:733px;
+	background:url(../img/f_primera.jpg) no-repeat;
+	box-shadow:rgba(0,0,0,1.00) 0 3px 10px;
+	z-index:1;
+	}
+
+#t_primero {
+	position:absolute;
+	width:100%;
+	height:186px;
+	top:420px;
+	}
+#segundo {
+	position:absolute;
+	width:100%;
+	height:305px;
+	background:rgba(255,255,255,1.00);
+	top:734px;
+	text-align:center;
+	}
+#pc {
+	position:absolute;
+	width:100%;
+	height:496px;
+	bottom:0px;
+	/*left:100px;*/
+	}
+#t_segundo {
+	position:absolute;
+	width:100%;
+	height:144px;
+	top:100px;
+	cursor:pointer;
+	}
+#redes_s {
+	position:absolute;
+	width:180px;
+	height:auto;
+	right:20px;
+	}
+#twbtn {
+	position:relative;
+	width:50px;
+	height:50px;
+	float:left;
+	cursor:pointer;
+	}
+#ytbtn {
+	position:relative;
+	width:50px;
+	height:50px;
+	margin-left:10px;
+	float:left;
+	cursor:pointer;
+	}
+#fbbtn {
+	position:relative;
+	width:50px;
+	height:50px;
+	margin-left:10px;
+	float:left;
+	cursor:pointer;
+	}
+#tercera {
+	position:absolute;
+	width:100%;
+	height:1076px;
+	background:url(../img/f_tercera.png) no-repeat;
+	background-color:rgba(255,255,255,1.00);
+	top:700px;
+	}
+#c1 {
+	position:absolute;
+	width:220px;
+	height:220px;
+	left:125px;
+	top:250px;
+	}
+#c2 {
+	position:absolute;
+	width:220px;
+	height:220px;
+	left:490px;
+	top:250px;
+	}
+#c3 {
+	position:absolute;
+	width:220px;
+	height:220px;
+	right:140px;
+	top:250px;
+	}
+#texto_3 {
+	position:absolute;
+	width:943px;
+	height:282px;
+	left:125px;
+	top:650px;
+	}
+#cuarta {
+	position:absolute;
+	width:100%;
+	height:1380px;
+	background-color:rgba(255,255,255,1.00);
+	top:1038px;
+	padding-top:50px;
+	}
+#caja1 {
+	position:relative;
+	width:598px;
+	height:916px;
+	/*border:rgba(255,0,4,1.00) solid 1px;*/
+	float:left;
+	text-align:center;
+	}
+#caja2 {
+	position:relative;
+	width:598px;
+	height:916px;
+	/*border:rgba(255,0,4,1.00) solid 1px;*/
+	float:left;
+	text-align:center;
+		}
+#caja3 {
+	position:relative;
+	width:1198px;
+	height:389px;
+	/*border:rgba(255,0,4,1.00) solid 1px;*/
+	float:left;
+	text-align:center;
+	margin-top:120px;
+		}
+	
+#texto1_4 {
+	position:relative;
+	margin-top:20px;
+	margin-left:60px;
+	}
+#texto2_4 {
+	position:relative;
+	margin-top:20px;
+	}
+#contfor {
+	width:530px;
+	height:870px;
+	}
+#texto3_4 {
+	position:relative;
+	margin-top:50px;
+	
+}
+#quinta {
+	position:absolute;
+	width:100%;
+	height:130px;
+	background-color:rgba(255,255,255,1.00);
+	top:2450px;
+	}
+#pie {
+	position:relative;
+	margin-top:5px;
+}
+
+#btnadmisiones {
+	position: absolute;
+	width: 52px;
+	height: 45px;
+	top: 130px;
+	left: 508px;
+	-moz-animation-name: ani-btnadmisiones;
+	animation-name: ani-btnadmisiones;
+	-webkit-animation-name: ani-btnadmisiones;
+	-moz-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	-moz-animation-delay: 0s;
+	animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+	-moz-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	cursor:pointer;
+	}
+@-webkit-keyframes ani-btnadmisiones {
+0% {
+opacity:1;
+}
+50% {
+opacity:0.2;
+}
+100% {
+opacity:1;
+}
+}
+@keyframes ani-btnadmisiones {
+0% {
+opacity:1;
+}
+50% {
+opacity:0.2;
+}
+100% {
+opacity:1;
+}
+}
+@-moz-keyframes ani-btnadmisiones {
+0% {
+opacity:1;
+}
+50% {
+opacity:0.2;
+}
+100% {
+opacity:1;
+}
+}
+
+#btnprogramas {
+	position: absolute;
+	width: 43px;
+	height: 43px;
+	top: 132px;
+	left: 683px;
+	-moz-animation-name: ani-btnprogramas;
+	animation-name: ani-btnprogramas;
+	-webkit-animation-name: ani-btnprogramas;
+	-moz-animation-duration: 2s;
+	animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	-moz-animation-delay: 0s;
+	animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+	-moz-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	cursor:pointer;
+	}
+	
+@-webkit-keyframes ani-btnprogramas {
+0% {
+opacity:1;
+}
+50% {
+opacity:0.2;
+}
+100% {
+opacity:1;
+}
+}
+@keyframes ani-btnprogramas {
+0% {
+opacity:1;
+}
+50% {
+opacity:0.2;
+}
+100% {
+opacity:1;
+}
+}
+@-moz-keyframes ani-btnprogramas {
+0% {
+opacity:1;
+}
+50% {
+opacity:0.2;
+}
+100% {
+opacity:1;
+}
+}
+#btnlogo {
+	width: 131px;
+	height: 71px;
+	position: absolute;
+	top: 30px;
+	left: 44px;
+	background: rgba(255,0,4,0);
+	cursor: pointer;
+	}

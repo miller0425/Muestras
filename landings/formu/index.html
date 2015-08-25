@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>Uvirtual - Educación Virtual</title>
+	<meta http-equiv="Content-Language" content="ES" />
+
+	<meta name="language" content="spanish" />
+	<meta name="author" content="Uvirtual - Universitaria Virtual Internacional - 2014" />
+	<meta name="copyright" content="Copyright (c) 2014 by Uvirtual" />
+	<meta name="description" content="Uvirtual" />
+	<meta name="abstract" content="Uvirtual" />
+	<meta name="keywords" content="" />
+	
+	<!-- Mobile Specific Metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+    <!-- Fav and touch icons
+	================================================== -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    
+	<!-- Custom styles 
+	================================================== -->
+	<link rel="stylesheet" href="css/responsiveslides.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/animate-custom.css"   type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/style.css"            type="text/css" media="screen">
+
+	<!-- Validator 
+	================================================== -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.validationEngine-es.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/custom.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- FancyBox 
+	================================================== -->
+	<script src="js/jquery.fancybox.pack.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+	<!-- Media querys 
+	================================================== -->
+	<link href="css/media-queries.css" rel="stylesheet" media="screen">
+	<!--[if IE 8 ]><link href="css/ie8.css" rel="stylesheet" media="screen"><![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements 
+	================================================== -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+           		  <div class="span5 curse-form-box">
+	        			    
+            			<div class="cont"  style="background:url(img/fondo.png) no-repeat; padding-right:45px; padding-left:45px;">
+	            			<span style="color:rgba(255,255,255,1.00); text-align:center; margin-top:-10px;"><h3 ><strong>SOLICITA INFORMACIÓN</strong></h3></span>
+                            <p class="text-center" style=" color:#FFF;font-size:20px; padding:10px 0px; margin-left:-5px; margin-right:-5px; margin-top:-10px;" >Pronto uno de nuestros<br>
+								asesores se comunicará contigo</p>
+	            			<form id="curse-form" class="nm" action="enviarformulario.php" method="post">
+								
+								<br/>
+								
+	            				<div class="row-fluid">
+                            		<div class="span6" >
+                                		<input class="input-large validate[required]" type="text" placeholder="Nombre" name="nombre" data-prompt-position="center:-120" required />
+                                	</div>
+                                	<div class="span6" >
+                                	    <input class="input-large validate[required]" type="text" placeholder="Apellidos" name="apellido" data-prompt-position="center:-120" required />
+                               	    </div>
+                                </div>				  
+	            				<div class="row-fluid">
+		                    		<input class="input-large validate[required,custom[email]]" type="email" placeholder="Email" name="email" data-prompt-position="center:-120" required/>
+                                </div>
+
+	            				<div class="row-fluid">
+		                        	<div class="span6">
+                                	    <input class="input-large validate[required]" type="number" placeholder="Celular o Teléfono" name="telefono" data-prompt-position="center:-120" required />
+                               	    </div>
+                            		<div class="span6">
+	                            	    <input class="input-large validate[required]" type="text" placeholder="Pais" name="pais" data-prompt-position="center:-120" required />
+                                	</div>
+                                    <div class="span6">
+	                            	    <input class="input-large validate[required]" type="text" placeholder="Ciudad" name="ciudad" data-prompt-position="center:-120" required />
+                                	</div>
+                                </div>
+
+	            				<div class="row-fluid">
+                                	<select style="height:50px;" class="input-large validate[required]" name="programa" data-prompt-position="center:-120" required >
+										<option value=""> --- Programa de interés --- </option>
+										<option value="Publicidad">Publicidad</option>
+										<option value="Diseño Gráfico">Diseño Gráfico Digital</option>
+                                        <option value="Admin Empre">Administración de Empresas</option>
+                                        <option value="Cont Public">Contaduría Pública</option>
+								  </select>
+                                </div>
+                                <div class="row-fluid">
+                                	<select class="input-large validate[required]" name="medio" data-prompt-position="center:-120" required >
+										<option value=""> --- ¿Por qué medio te enteraste? --- </option>
+										<option value="Facebook">Facebook</option>
+										<option value="Radio">Radio</option>
+                                        <option value="Televisión">Televisión</option>
+                                        <option value="Prensa">Prensa</option>
+                                        <option value="Publicidad Web">Publicidad Web</option>
+                                        <option value="Por un amigo">Por un amigo</option>
+								  </select>
+                                </div>
+                                <br>
+                                  <!---   checkbox terminos y condiciones -->
+                                <div class="row-fluid" style="font-size:16px; text-align:center;">
+									<input style="width:18px; height:18px;" id="checkbox" type="checkbox" name="checkbox" required value="1" class="validate[required]"/>
+										<a href="#openModal" style="font-size:14px; color:rgba(255,255,255,1.00)">Términos y condiciones</a>
+									
+                                </div>
+                                
+                                <!---   final checbox -->
+								<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+		setTimeout(function() {
+			$('#google').load('parse_cookie.php');
+		}, 500);
+	});
+</script>
+
+                                <br>
+                                <div class="row-fluid">
+                            		<div class="span12 text-center" style="text-align:center;">
+										<input class="btnenviar" type="submit" value="" />
+                               	    </div>
+                                </div> 
+
+							</form>
+						</div>
+           		  </div>
+
+
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h3>Política de privacidad</h3>
+		<p style="color:rgba(0,0,0,1.00);">
+
+
+
+En relación con la información compuesta por nombre, dirección, teléfono, correo electrónico y ciudad, que es solicitada para acceder a este, el usuario manifiesta que acepta y conoce que La información antes referida es solicitada por Uvirtual para efectos de acceder a los mecanismos interactivos, entre los que se encuentra Uvirtual, y que el usuario es libre de suministrarla o no.
+
+ 
+
+Los datos recibidos serán incorporados a una base de datos de la cual es responsable Uvirtual. Esta compañía tratará esta información de manera confidencial y únicamente para ofrecer los servicios de nuestros planes educativos, teniendo en cuenta siempre las garantías y reserva que imponen la Constitución Política, las normas sobre protección de datos personales y demás normas concordantes. Para estos efectos, Uvirtual ha adoptado los niveles de seguridad de protección de los datos personales legalmente requeridos, instalando las medidas técnicas y organizativas necesarias para evitar la pérdida, mal uso, alteración, acceso no autorizado y robo de los datos facilitados.
+
+Uvirtual se compromete a no vender, ceder ni compartir con terceros los datos recibidos en este sitio
+
+El usuario autoriza Uvirtual para contactarlo telefónicamente, o bien para enviarle a la dirección de correo indicada en el formulario de registro, información comercial y/o aquella que considere de importancia para sus usuarios
+
+El usuario puede ser eliminado de la lista de contacto haciendo click en el link de Uvirtual - Universitaria Virtual Internacional  no se responsabiliza por cualquier consecuencia derivada del ingreso indebido de terceros a la base de datos y/o por alguna falla técnica en el funcionamiento y/ o conservación de datos.
+
+Uvirtual - Universitaria Virtual Internacionalpodrá utilizar cookies para posteriores contactos de las personas que han accedido a este sitio</p>
+	</div>
+</div>
+
+	<!-- ======================= JQuery libs =========================== -->        
+
+        <!-- Bootstrap.js-->
+        <script src="js/bootstrap.js"></script>
+    
+        <!-- Video Responsive-->
+        <script src="js/jquery.fitvids.min.js" type="text/javascript"></script>
+    
+        <!--Video Responsive-->
+        <script src="js/jquery.placeholder.min.js" type="text/javascript"></script>
+    
+        <!-- Slider --> 
+        <script type="text/javascript" src="js/responsiveslides.min.js"></script>
+    
+        <!-- Custom js -->
+        <script src="js/jquery-func.js" type="text/javascript"></script>
+
+	<!-- ======================= End JQuery libs =========================== --> 
+
+</body>
+</html>
